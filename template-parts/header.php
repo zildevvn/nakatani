@@ -1,13 +1,13 @@
-<?php $header_bg_gray = get_field('header_bg_gray'); ?>
+<?php 
+    $custom_logo_id = get_theme_mod('custom_logo');
+    $logo_url = wp_get_attachment_url($custom_logo_id);
+?>
+<header id="site-header" class="header-main">
+    <div class="container-fluid">
+        <div class="header-main-inner d-flex justify-content-between align-items-center gap-3"> 
 
-<header id="site-header" class="header <?= ($header_bg_gray || is_404()) ? 'header_bg_gray' : '' ?>">
-    <div class="container">
-        <div class="header__inner">
-            <div class="header__branding">
+            <div class="header-main__logo"> 
                 <?php
-                $custom_logo_id = get_theme_mod('custom_logo');
-                $logo_url = wp_get_attachment_url($custom_logo_id);
-
                 if ($logo_url && str_ends_with($logo_url, '.svg')) {
                     $svg_path = get_attached_file($custom_logo_id);
                     if (file_exists($svg_path)) {
@@ -20,38 +20,93 @@
                 } else {
                     ?>
                     <h1 class="header__title">
-                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="header__logo-link">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                             <?php bloginfo('name'); ?>
                         </a>
                     </h1>
                 <?php } ?>
             </div>
 
-            <div class="d-flex align-items-center header__right">
-                <div id="site-navigation" class="header__nav">
+            <div class="btn-open-menu d-md-none d-flex flex-wrap"> 
+                <span class="line">  </span>
+                <span class="line">  </span>
+            </div>
+
+            <div class="header-main-right d-none d-md-flex justify-content-between align-items-center"> 
+                <div class="header-main__nav">
                     <?php
-                    if (has_nav_menu('primary-menu')) {
-                        wp_nav_menu([
-                            'theme_location' => 'primary-menu',
-                            'menu_id' => 'primary-menu',
-                            'menu_class' => 'primary-menu',
-                            'bootstrap' => true,
-                            'container_class' => 'menu-container',
-                            'items_wrap' => '<ul id="%1$s" class="%2$s navbar-nav">%3$s</ul>'
-                        ]);
-                    }
+                        if (has_nav_menu('primary-menu')) {
+                            wp_nav_menu([
+                                'theme_location' => 'primary-menu',
+                                'menu_id'        => 'primary-menu',
+                                'menu_class'     => 'primary-menu d-flex align-items-center p-0 m-0',
+                                'bootstrap'      => true,
+                                'container_class' => 'menu-container',
+                                'items_wrap'      => '<ul id="%1$s" class="%2$s navbar-nav">%3$s</ul>'
+                            ]);
+                        }
                     ?>
                 </div>
 
-                <div class="d-flex items-center header__actions">
-                    <div id="header__search" class="header__search">
-                        <?= nakatani_svg_icon('search-icon') ?>
+                <?php if(is_plugin_active( 'gtranslate/gtranslate.php' )): ?>
+                    <div class="header-main__language"> 
+                        <?php echo do_shortcode('[gtranslate]'); ?>
                     </div>
-                    <div id="header__hamberger" class="d-block d-lg-none header__hamberger">
-                        <span id="hamberger-icon"><?= nakatani_svg_icon('hamberger-icon') ?></span>
-                        <span id="close-menu-icon"><?= nakatani_svg_icon('menu-close-icon') ?></span>
-                    </div>
+                <?php endif; ?>    
+            </div>
+        </div>
+
+
+        <div class="header-mobile d-md-none"> 
+            <div class="header-mobile-inner d-flex justify-content-between align-items-center gap-3"> 
+                <div class="header-main__logo"> 
+                    <?php
+                    if ($logo_url && str_ends_with($logo_url, '.svg')) {
+                        $svg_path = get_attached_file($custom_logo_id);
+                        if (file_exists($svg_path)) {
+                            echo '<a href="/" class="custom-logo-link">';
+                            echo file_get_contents($svg_path);
+                            echo '</a>';
+                        }
+                    } elseif (has_custom_logo()) {
+                        the_custom_logo();
+                    } else {
+                        ?>
+                        <h1 class="header__title">
+                            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                                <?php bloginfo('name'); ?>
+                            </a>
+                        </h1>
+                    <?php } ?>
                 </div>
+
+                <div class="btn-close-menu d-flex flex-wrap"> 
+                    <span class="line">  </span>
+                    <span class="line">  </span>
+                </div>
+            </div>
+
+            <div class="header-mobile-content"> 
+                <div class="header-main__nav">
+                    <?php
+                        if (has_nav_menu('primary-menu')) {
+                            wp_nav_menu([
+                                'theme_location' => 'primary-menu',
+                                'menu_id'        => 'primary-menu',
+                                'menu_class'     => 'primary-menu d-flex align-items-center p-0 m-0 flex-wrap',
+                                'bootstrap'      => true,
+                                'container_class' => 'menu-container',
+                                'items_wrap'      => '<ul id="%1$s" class="%2$s navbar-nav">%3$s</ul>'
+                            ]);
+                        }
+                    ?>
+                </div>
+
+                <?php if(is_plugin_active( 'gtranslate/gtranslate.php' )): ?>
+                    <div class="header-main__language"> 
+                        <?php echo do_shortcode('[gtranslate]'); ?>
+                    </div>
+                <?php endif; ?> 
             </div>
         </div>
     </div>

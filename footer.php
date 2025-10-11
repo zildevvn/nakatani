@@ -8,7 +8,6 @@
  */
 
 do_action('nakatani_hook_footer');
-do_action('nakatani_hook_search');
 wp_footer();
 ?>
 <div class="overlay-menu"></div>
