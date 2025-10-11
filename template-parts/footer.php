@@ -14,7 +14,7 @@
 <footer class="main-footer">
     <div class="main-footer-top w-100"> 
         <div class="main-footer-top__bg"> 
-            <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/bg-footer-n.jpg" alt="image Divider"/>
+            <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/bg-top-footer.jpg" alt="bg-footer-top"/>
         </div>
         <div class="container"> 
             <h2>Information</h2>
@@ -74,7 +74,7 @@
                             <div class="<?=  $classed ?> email"> 
                                 <div class="info-item__title">
                                     <span></span>
-                                    <p>Tel</p>
+                                    <p>Email</p>
                                 </div>
 
                                 <p class="info-item__content"> 
