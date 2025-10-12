@@ -1,6 +1,27 @@
 .header-main{
     padding: 10px 0;
-    position: relative;
+    position: fixed;
+    left: 0;
+    top:0;
+    clear: right;
+    width: 100%;
+    background: transparent;
+    z-index: 999;
+    max-width: 100%;
+
+    .container-fluid{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
+    body.logged-in & {
+        top:32px;
+
+        @media (max-width: 782px) {
+            top:46px;
+        }
+    }
 
     &__logo{
         @media (max-width: 767.98px) {
@@ -10,6 +31,7 @@
 
     &-right{
         gap: 40px;
+        width: calc(100% - 186px - 0.5rem);
         @media (max-width: 1023.98px){
             gap:24px;
         }

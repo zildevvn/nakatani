@@ -1,0 +1,23 @@
+.nkt-profile{
+    padding: 120px 0 97px 0;
+    &-warp{
+        position: relative;
+        display: flex;
+    }
+
+    &__thumbnail{
+        width: 50%;
+        max-width: 50%;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content{
+        width: 42.86%;
+        background: rgba($color: #6b4e3a, $alpha: 0.96);
+        // position: absolute;
+        // top:
+    }
+}

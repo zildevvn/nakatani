@@ -65,10 +65,67 @@
         $('.info-item__title').css('min-width', maxWidth + 'px');
     }
 
+    const nktHeroSlider = () => {
+        const swiper = new Swiper('.nkt-hero__slider', {
+            loop: true,
+            speed: 1000,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+    }
+
+const nktaboutCarousel = () => {
+    const swiper = new Swiper('.nkt-about_carousel', {
+        loop: true,
+        speed: 1000,
+        effect: 'side',
+        fadeEffect: {
+            crossFade: true
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+        breakpoints: {
+            375: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+            },
+            1200: {
+                slidesPerView: 5,
+                spaceBetween: 24,
+            },
+            1600: {
+                slidesPerView: 7,
+                spaceBetween: 24,
+            }
+        }
+    });
+}
+
     
     $(document).ready(function () {
        nktInfoFooter()
        nktLanguage()
+       nktHeroSlider()
+       nktaboutCarousel()
     })
 
 })(jQuery); 

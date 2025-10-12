@@ -4,8 +4,7 @@
 ?>
 <header id="site-header" class="header-main">
     <div class="container-fluid">
-        <div class="header-main-inner d-flex justify-content-between align-items-center gap-3"> 
-
+        <div class="header-main-inner d-flex justify-content-between align-items-center gap-3 w-100"> 
             <div class="header-main__logo"> 
                 <?php
                 if ($logo_url && str_ends_with($logo_url, '.svg')) {
@@ -32,7 +31,7 @@
                 <span class="line">  </span>
             </div>
 
-            <div class="header-main-right d-none d-md-flex justify-content-between align-items-center"> 
+            <div class="header-main-right d-none d-md-flex justify-content-end align-items-center"> 
                 <div class="header-main__nav">
                     <?php  get_template_part('template-parts/menu-content') ?>
                 </div>   
