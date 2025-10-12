@@ -5,6 +5,9 @@ if (!defined('NAKATANI_WP_TOOLKIT_VER')) {
 }
 
 define('TEMPLATE_DIRECTORY_URL', get_template_directory_uri());
+define('SUPPORTED_LANGS', ['en','fr','ja']);
+define('DEFAULT_LANG',    'en');
+
 
 require get_template_directory() . '/inc/reset.php';
 require get_template_directory() . '/inc/initialize.php';

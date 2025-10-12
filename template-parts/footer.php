@@ -2,13 +2,14 @@
     $copyright    = get_field('copyright_ft', 'option');
     $logo         = get_field('logo_footer', 'option');
     $socials      = get_field('socials_ft', 'option');
-    $sub_text     = get_field('sub_text_ft', 'option');
+    $sub_text     = nkt_translate('sub-text', 'footer');
     $information  = get_field('information_ft', 'option');
-    $work_hours   = get_field('work_hours', 'option');
-    $payment      = get_field('payment', 'option');
-    // echo "<pre>";
-    // echo print_r($socials) information_ft;
-    // echo "</pre>";
+    $work_hours   = nkt_translate('work_hours', 'footer');
+    $payment      = nkt_translate('payment', 'footer');
+    $closed_days = nkt_translate('closed_days', 'footer');
+    $lunch       = nkt_translate('lunch', 'footer');
+    $dinner      = nkt_translate('dinner', 'footer');
+    $heading     = nkt_translate('heading', 'footer');
 ?>
 
 <footer class="main-footer">
@@ -17,7 +18,8 @@
             <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/bg-top-footer.jpg" alt="bg-footer-top"/>
         </div>
         <div class="container"> 
-            <h2>Information</h2>
+            <h2><?= $heading ?></h2>
+
             <div class="main-footer-top-inner d-flex"> 
                 <?php if(!empty($information)): ?>
                     <?php 
@@ -25,9 +27,6 @@
                         $tel     = $information['tel'] ? : '';
                         $fax     = $information['fax'] ? : '';
                         $email   = $information['email'] ? : '';
-                        $closed_days = $work_hours['closed_days'] ? : '';
-                        $lunch       = $work_hours['lunch'] ? : '';
-                        $dinner      = $work_hours['dinner'] ? : '';
                         $classed = 'info-item w-100 d-flex align-items-center';
                     ?>
                     <div class="main-footer__information d-flex flex-wrap"> 
@@ -87,11 +86,11 @@
                             <div class="<?=  $classed ?> closed_days"> 
                                 <div class="info-item__title">
                                     <span></span>
-                                    <p>Closed</p>
+                                    <p><?= $closed_days['label'] ?></p>
                                 </div>
 
                                 <p class="info-item__content"> 
-                                    <?= $closed_days ?>
+                                    <?= $closed_days['content'] ?>
                                 </p>
                             </div>
                         <?php endif; ?> 
@@ -100,21 +99,21 @@
                             <div class="<?=  $classed ?> closed_days"> 
                                 <div class="info-item__title">
                                     <span></span>
-                                    <p>Opening hours</p>
+                                    <p><?=$work_hours ?></p>
                                 </div>
 
                                 <div class="info-item__content"> 
                                     <?php if(!empty($lunch)): ?>
                                         <div class="item"> 
-                                            <span class="w-100 d-flex">Lunch</span>
-                                            <span class="w-100 d-flex"> <?= $lunch ?> </span>
+                                            <span class="w-100 d-flex"><?= $lunch['label'] ?></span>
+                                            <span class="w-100 d-flex"> <?= $lunch['content'] ?> </span>
                                         </div>
                                     <?php endif;?>
                                     
                                     <?php if(!empty($dinner)): ?>
                                         <div class="item"> 
-                                            <span class="w-100 d-flex">Dinner</span>
-                                            <span class="w-100 d-flex"> <?= $dinner ?> </span>
+                                            <span class="w-100 d-flex"><?= $dinner['label'] ?></span>
+                                            <span class="w-100 d-flex"> <?= $dinner['content'] ?> </span>
                                         </div>
                                     <?php endif;?>
                                 </div>
@@ -125,11 +124,11 @@
                             <div class="<?=  $classed ?> payment"> 
                                 <div class="info-item__title">
                                     <span></span>
-                                    <p>Accepted payment methods</p>
+                                    <p><?= $payment['label'] ?></p>
                                 </div>
 
                                 <p class="info-item__content"> 
-                                    <?= $payment ?>
+                                    <?= $payment['content'] ?>
                                 </p>
                             </div>
                         <?php endif; ?> 
@@ -145,7 +144,7 @@
 
     <div class="main-footer-bottom"> 
         <div class="container"> 
-            <div class="main-footer-bottom-inner d-flex align-items-center flex-wrap flex-sm-nowrap"> 
+            <div class="main-footer-bottom-inner d-flex align-items-end flex-wrap flex-sm-nowrap"> 
                 <div class="d-flex align-items-end"> 
                     <?php if($logo): ?>
                         <a href="/" class="main-footer__logo d-flex">
@@ -178,20 +177,9 @@
                     <?php endif; ?>
                 </div>
 
-                <?php if (has_nav_menu('primary-menu')): ?>
-                    <div class="main-footer__menu"> 
-                        <?php 
-                            wp_nav_menu([
-                                'theme_location' => 'primary-menu',
-                                'menu_id'        => 'primary-menu',
-                                'menu_class'     => 'primary-menu d-flex align-items-center p-0 m-0',
-                                'bootstrap'      => true,
-                                'container_class' => 'menu-container',
-                                'items_wrap'      => '<ul id="%1$s" class="%2$s navbar-nav">%3$s</ul>'
-                            ]);
-                        ?>
-                    </div>
-                <?php endif;?>                          
+                <div class="main-footer__menu"> 
+                    <?php  get_template_part('template-parts/menu-content') ?>
+                </div>                        
             </div>
 
             <?php if(!empty($sub_text)): ?>

@@ -4,10 +4,6 @@
     color:#fff;
     font-family: $font-primary;
 
-    // .container{
-    //     max-width: 1110px;
-    // }
-
     &-top{
         padding: 40px 0 60px 0;
         position: relative;
@@ -57,6 +53,22 @@
             font-size: 77px;
             line-height: 100%;
             font-family: $font-tertiary;
+
+            @media (max-width: 1199.98px) {
+                font-size: 50px;
+            }
+
+            @media (max-width: 1023.98px) {
+                font-size: 48px;
+            }
+
+            @media (max-width: 767.98px) {
+                font-size: 38px;
+            }
+
+            @media (max-width: 767.98px) {
+                font-size: 38px;
+            }
         }
     }
 
@@ -68,16 +80,16 @@
         }
         iframe{
             width: 100%;
-            height: 455px;
+            height: 350px;
 
             @media (max-width: 575.98px) {
-                height: 435px;
+                height: 235px;
             }
         }
     }
 
     &__information{
-        gap:16px;
+        gap:0px;
         width: calc(55% - 25px);
        
         @media (max-width: 1023.98px) {
@@ -90,6 +102,7 @@
             line-height: 125%;
             gap:60px;
             font-family: $font-second;
+            padding: 14px 0;
 
             @media (max-width: 1023.98px) {
                 gap:32px;
@@ -107,7 +120,7 @@
             
             &:not(:last-child){
                 border-bottom: 1px solid #fff;
-                padding-bottom: 16px;
+                // padding-bottom: 16px;
             }
 
             &.closed_days{
@@ -141,8 +154,8 @@
 
                 span{
                     display: inline-flex;
-                    min-width: 14px;
-                    height: 14px;
+                    min-width: 13px;
+                    height: 13px;
                     background: #fff;
                 }
             }

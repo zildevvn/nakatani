@@ -90,3 +90,152 @@ if (!function_exists('nakatani_the_posts_navigation')) {
 		endif;
 	}
 }
+
+
+function nkt_translate($key, $path) {
+    $locale = get_locale(); 
+    $shortLocale = substr($locale, 0, 2); 
+    
+    $file = get_template_directory() . "/languages/{$shortLocale}/{$path}.php";
+    
+    if (file_exists($file)) {
+        $langData = include $file;
+        return $langData[$key] ?? $key;
+    }
+    
+    $fallbackFile = get_template_directory() . "/languages/en/{$path}.php";
+    if (file_exists($fallbackFile)) {
+        $langData = include $fallbackFile;
+        return $langData[$key] ?? $key;
+    }
+    
+    return $key; 
+}
+
+function nkt_translate_shortcode($atts) {
+    $atts = shortcode_atts([
+        'text' => ''
+    ], $atts);
+    
+    return nkt_translate($atts['text']);
+}
+add_shortcode('t', 'nkt_translate_shortcode');
+
+
+function handle_language_switch() {
+    if (isset($_GET['lang'])) {
+        $lang = sanitize_text_field($_GET['lang']);
+        $allowed_langs = ['en', 'jp', 'fr'];
+        
+        if (in_array($lang, $allowed_langs)) {
+            // SET COOKIE 
+            setcookie('site_language', $lang, time() + (365 * DAY_IN_SECONDS), COOKIEPATH, COOKIE_DOMAIN, false, true);
+            $_COOKIE['site_language'] = $lang;
+        }
+        
+        // Redirect về URL không có parameter lang
+        $redirect_url = remove_query_arg('lang');
+        wp_redirect($redirect_url);
+        exit;
+    }
+}
+add_action('init', 'handle_language_switch');
+
+
+function custom_site_language($locale) {
+    // important cookie
+    if (isset($_COOKIE['site_language'])) {
+        $lang = $_COOKIE['site_language'];
+        switch ($lang) {
+            case 'en':
+                return 'en_US';
+            case 'fr':
+                return 'fr';
+            case 'jp':
+                return 'jp';
+        }
+    }
+    
+    // Fallback to default settings of WordPress
+    return $locale;
+}
+add_filter('locale', 'custom_site_language');
+
+
+function get_language_url($lang) {
+    global $wp;
+    $current_url = home_url($wp->request);
+    
+    if (!str_ends_with($current_url, '/')) {
+        $current_url .= '/';
+    }
+    
+    return add_query_arg('lang', $lang, $current_url);
+}
+
+function nkt_language_switcher() {
+    $languages = [
+        'en' => 'EN',
+        'jp' => 'JP',
+		'fr' => 'FR'
+    ];
+    
+    $current_lang = isset($_COOKIE['site_language']) ? $_COOKIE['site_language'] : 'en';
+    $current_language_name = $languages[$current_lang];
+    
+    $output = '<div class="language-switcher d-flex flex-wrap">';
+    
+    
+    $output .= '<div class="current-language-item w-100 d-sm-flex d-none">';
+    $output .= '<span class="current-language">' . $current_language_name . '</span>';
+    $output .= '<span class="dropdown-arrow"></span>';
+    $output .= '</div>';
+    
+    $output .= '<div class="language-dropdown">';
+    $output .= '<div class="dropdown-content">';
+    
+    foreach ($languages as $code => $name) {
+        if ($code === $current_lang) continue;
+        
+        $language_url = get_language_url($code);
+        $output .= '<a href="' . esc_url($language_url) . '" class="language-item" data-lang="' . $code . '">';
+        $output .= $name;
+        $output .= '</a>';
+    }
+    
+    $output .= '</div>';
+    $output .= '</div>';
+    $output .= '</div>';
+    
+    return $output;
+}
+
+function nkt_language_switcher_mobile() {
+    $languages = [
+        'en' => 'EN',
+        'jp' => 'JP',
+        'fr' => 'FR'
+    ];
+    
+    $current_lang = isset($_COOKIE['site_language']) ? $_COOKIE['site_language'] : 'en';
+    
+    $output = '<div class="language-switcher-mobile d-block d-sm-none">';
+    $output .= '<div class="mobile-language-list">';
+    
+    foreach ($languages as $code => $name) {
+        $active_class = ($code === $current_lang) ? 'active' : '';
+        $language_url = get_language_url($code);
+        
+        $output .= '<a href="' . esc_url($language_url) . '" class="mobile-language-item ' . $active_class . '" data-lang="' . $code . '">';
+        $output .= $name;
+        // if ($code === $current_lang) {
+        //     $output .= ' <span class="current-indicator">✓</span>';
+        // }
+        $output .= '</a>';
+    }
+    
+    $output .= '</div>';
+    $output .= '</div>';
+    
+    return $output;
+}

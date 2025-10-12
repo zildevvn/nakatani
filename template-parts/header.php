@@ -34,25 +34,12 @@
 
             <div class="header-main-right d-none d-md-flex justify-content-between align-items-center"> 
                 <div class="header-main__nav">
-                    <?php
-                        if (has_nav_menu('primary-menu')) {
-                            wp_nav_menu([
-                                'theme_location' => 'primary-menu',
-                                'menu_id'        => 'primary-menu',
-                                'menu_class'     => 'primary-menu d-flex align-items-center p-0 m-0',
-                                'bootstrap'      => true,
-                                'container_class' => 'menu-container',
-                                'items_wrap'      => '<ul id="%1$s" class="%2$s navbar-nav">%3$s</ul>'
-                            ]);
-                        }
-                    ?>
-                </div>
+                    <?php  get_template_part('template-parts/menu-content') ?>
+                </div>   
 
-                <?php if(is_plugin_active( 'gtranslate/gtranslate.php' )): ?>
-                    <div class="header-main__language"> 
-                        <?php echo do_shortcode('[gtranslate]'); ?>
-                    </div>
-                <?php endif; ?>    
+                <div class="header-main__language"> 
+                    <?php echo nkt_language_switcher(); ?>
+                </div>
             </div>
         </div>
 
@@ -81,8 +68,8 @@
                 </div>
 
                 <div class="btn-close-menu d-flex flex-wrap"> 
-                    <span class="line">  </span>
-                    <span class="line">  </span>
+                    <span class="line"></span>
+                    <span class="line"></span>
                 </div>
             </div>
 
@@ -102,11 +89,9 @@
                     ?>
                 </div>
 
-                <?php if(is_plugin_active( 'gtranslate/gtranslate.php' )): ?>
-                    <div class="header-main__language"> 
-                        <?php echo do_shortcode('[gtranslate]'); ?>
-                    </div>
-                <?php endif; ?> 
+                <div class="header-main__language"> 
+                    <?php echo nkt_language_switcher_mobile(); ?>
+                </div>
             </div>
         </div>
     </div>
