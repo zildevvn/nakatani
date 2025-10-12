@@ -6569,12 +6569,12 @@ body.logged-in .header-main .header-mobile-inner {
   font-family: "PRyuminPr6N", serif;
 }
 .main-footer-top {
-  padding: 60px 0;
+  padding: 40px 0 60px 0;
   position: relative;
 }
 @media (max-width: 767.98px) {
   .main-footer-top {
-    padding: 48px 0;
+    padding: 50px 0 56px 0;
   }
 }
 .main-footer-top .container {
@@ -6583,6 +6583,7 @@ body.logged-in .header-main .header-mobile-inner {
 }
 .main-footer-top-inner {
   gap: 50px;
+  margin-top: 20px;
 }
 @media (max-width: 1199.98px) {
   .main-footer-top-inner {
@@ -6592,11 +6593,6 @@ body.logged-in .header-main .header-mobile-inner {
 @media (max-width: 1023.98px) {
   .main-footer-top-inner {
     flex-wrap: wrap;
-  }
-}
-@media (max-width: 76.98px) {
-  .main-footer-top-inner {
-    gap: 32px;
   }
 }
 .main-footer-top__bg {
@@ -6632,27 +6628,20 @@ body.logged-in .header-main .header-mobile-inner {
 }
 .main-footer__map iframe {
   width: 100%;
-  height: 400px;
+  height: 455px;
 }
 @media (max-width: 575.98px) {
   .main-footer__map iframe {
-    height: 40vh;
+    height: 435px;
   }
 }
 .main-footer__information {
   gap: 16px;
-  margin-top: 60px;
   width: calc(55% - 25px);
 }
 @media (max-width: 1023.98px) {
   .main-footer__information {
     width: 100%;
-    margin-top: 48px;
-  }
-}
-@media (max-width: 767.98px) {
-  .main-footer__information {
-    margin-top: 32px;
   }
 }
 .main-footer__information .info-item {
@@ -6746,11 +6735,11 @@ body.logged-in .header-main .header-mobile-inner {
   display: none;
 }
 .main-footer-bottom {
-  padding: 60px 0;
+  padding: 40px 0 60px 0;
 }
 @media (max-width: 767.98px) {
   .main-footer-bottom {
-    padding: 48px 0;
+    padding-bottom: 48px;
   }
 }
 @media (max-width: 575.98px) {
@@ -6762,7 +6751,7 @@ body.logged-in .header-main .header-mobile-inner {
   gap: 20px;
 }
 .main-footer-bottom-inner {
-  gap: 200px;
+  gap: 135px;
 }
 @media (max-width: 1023.98px) {
   .main-footer-bottom-inner {
@@ -6807,7 +6796,12 @@ body.logged-in .header-main .header-mobile-inner {
   margin-top: 16px;
 }
 .main-footer__menu ul {
-  gap: 32px;
+  gap: 50px;
+}
+@media (max-width: 1199.98px) {
+  .main-footer__menu ul {
+    gap: 32px;
+  }
 }
 @media (max-width: 1023.98px) {
   .main-footer__menu ul {
