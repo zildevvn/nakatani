@@ -18,11 +18,11 @@ function nakatani_acf_init()
 			));
 
 			// Add child page under the main options page
-			acf_add_options_sub_page(array(
-				'page_title' => 'Header Settings',
-				'menu_title' => 'Header',
-				'parent_slug' => 'theme-options',
-			));
+			// acf_add_options_sub_page(array(
+			// 	'page_title' => 'Header Settings',
+			// 	'menu_title' => 'Header',
+			// 	'parent_slug' => 'theme-options',
+			// ));
 
 			// Add another child page
 			acf_add_options_sub_page(array(

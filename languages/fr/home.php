@@ -37,10 +37,10 @@ return [
     'lable' => 'Profil',
     'name' => 'Chef : Shinsuke Nakatani',
     'bio' => [
-        'Depuis son arrivée en France en 2001, il a acquis de l\'expérience dans plusieurs restaurants régionaux.',
-        'A travaillé 9 ans chez Hélène Darroze à Paris, occupant le poste de chef durant les 3 dernières années.',
-        'Puis, le 9 septembre 2014, il a ouvert le restaurant "NAKATANI" où il exprime sa créativité.',
-        'Depuis 2016, NAKATANI conserve une étoile au Guide Michelin français.'
+      'part1' => 'Depuis son arrivée en France en 2001, il a acquis de l\'expérience dans plusieurs restaurants régionaux.',
+      'part2a' => 'A travaillé 9 ans chez Hélène Darroze à Paris, occupant le poste de chef durant les 3 dernières années.',
+      'part2b' => 'Puis, le 9 septembre 2014, il a ouvert le restaurant "NAKATANI" où il exprime sa créativité.',
+      'part3' => 'Depuis 2016, NAKATANI conserve une étoile au Guide Michelin français.'
     ]
   ]
 ];

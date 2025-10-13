@@ -1,7 +1,7 @@
 <?php
     $hero = nkt_translate('hero', 'home');
 ?>
-<section class="nkt-hero">
+<section class="nkt-hero section-fixed">
     <div class="nkt-hero__slider swiper">
         <div class="swiper-wrapper">
             <?php for ($i = 1; $i <= 6; $i++): ?>
@@ -11,6 +11,8 @@
             <?php endfor; ?>
         </div>
     </div>
+
+    <?php nktReservation() ?>
 
     <div class="nkt-hero__content w-100"> 
         <div class="container"> 

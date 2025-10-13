@@ -1,0 +1,108 @@
+.nkt-hero{
+    height: 100vh;
+    @supports (height: 100svh) {
+        height:100svh;
+    }
+}
+
+
+.nkt-list-categories{
+    background-image: url('../../../images/home/bg-about-ss.jpg');
+    min-height: 446px;
+    margin-top: 100vh;
+
+    &::before{
+        content: " ";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #f7f3ee, $alpha: 0.13);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    &__intro{
+        h2{
+            font-size: 25.48px;
+            line-height: 37.38px;
+            color: #80624c;
+            margin: 0;
+        }
+
+        p{
+            font-size: 35.82px;
+            line-height: 52.55px;
+            font-family: $font-second;
+            margin: 10px 0 0 0;
+            color: #59493f;
+        }
+
+        a{
+            font-size: 14.86px;
+            line-height: 22.39px;
+            font-family: $font-second;
+        }
+    }
+
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 50px;
+        width: 100%;
+        max-width: 1500px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .cate-item{
+            cursor: pointer;
+            &__thumbnail{
+                img{
+                    width: 100%;
+                    height: auto;
+                    max-width: 140px;
+                }
+            }
+
+            &__title{
+                font-size: 24px;
+                line-height: 26.34px;
+                color: #69513e;
+                font-weight: 500;
+                margin: 16px 0 10px 0;
+            }
+
+            &#item-cate-champagne{
+                .cate-item__thumbnail img {
+                    max-width: 79px;
+                }
+            }
+
+            &#item-cate-aperitifs-digestifs{
+                .cate-item__thumbnail img {
+                    max-width: 126px;
+                }
+            }
+
+            &#item-cate-bordeaux-blancs{
+                .cate-item__thumbnail img {
+                    max-width: 128px;
+                }
+            }
+
+            &#item-cate-bourgogne-blanc, &#item-cate-la-vallee-du-rhone-rouge{
+                .cate-item__thumbnail img {
+                    max-width: 123px;
+                }
+            }
+
+            &#item-cate-la-vallee-du-rhone-blanc, &#item-cate-bourgogne-rouge{
+                .cate-item__thumbnail img {
+                    max-width: 112px;
+                }
+            }
+        }
+    }
+}

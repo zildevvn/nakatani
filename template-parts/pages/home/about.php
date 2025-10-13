@@ -1,7 +1,7 @@
 <?php 
     $about = nkt_translate('about', 'home');
 ?>
-<section class="nkt-about">
+<section class="nkt-about section-relative nkt-bg-image">
     <div class="nkt-about-warp"> 
         <div class="nkt-about-thumbanil"> 
             <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/image-ab-ss.jpg" alt="logo site on hero"/>

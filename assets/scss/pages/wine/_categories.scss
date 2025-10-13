@@ -1,0 +1,15 @@
+.nkt-list-categories{
+    // background-image: url('../../../images/home/bg-about-ss.jpg');
+    min-height: 446px;
+    &::before{
+        content: " ";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #f7f3ee, $alpha: 0.13);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+}

@@ -27,6 +27,14 @@
         @media (max-width: 767.98px) {
             padding-left: 20px;
         }
+
+        img, svg{
+            @media (max-width: 991.98px){
+                width: 100%;
+                height: auto;
+                max-width: 150px;
+            }
+        }
     }
 
     &-right{
@@ -41,8 +49,12 @@
         ul{
             gap: 40px;
 
-            @media (max-width: 1023.98px){
+            @media (max-width: 1199.98px){
                 gap:24px;
+            }
+
+            @media (max-width: 991.98px){
+                gap:18px;
             }
 
             @media (max-width: 767.98px){
@@ -66,9 +78,12 @@
                     font-family: $font-primary;
                     font-weight: 500;
 
+                    @media (max-width: 991.98px){
+                        font-size: 16px;
+                    }
+
                     @media (max-width: 767.98px){
                         color:#ffff;
-                        font-size: 16px;
                     }
                 }
 
@@ -146,6 +161,10 @@
             transform 0.4s ease,
             visibility 0.4s ease,
             z-index 0s 0.4s; 
+
+        @supports (height: 100svh) {
+             height:100svh;
+        }
 
         &.has-show{
             z-index: 999;

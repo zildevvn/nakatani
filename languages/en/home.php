@@ -37,10 +37,10 @@ return [
       'lable' => 'Profile',
       'name'  => 'Chef: Shinsuke Nakatani',
       'bio'   => [
-         'Since arriving in France in 2001, he has gained experience in several regional restaurants.',
-         'Worked for 9 years at Hélène Darroze in Paris, serving as chef for the last 3 years.',
-        'Then, on September 9, 2014, he opened Restaurant "NAKATANI" where he showcases his creativity.',
-        'Since 2016, NAKATANI has maintained one star in the French Michelin Guide.'
+         'part1' => 'Since arriving in France in 2001, he has gained experience in several regional restaurants.',
+         'part2a' => 'Worked for 9 years at Hélène Darroze in Paris, serving as chef for the last 3 years.',
+         'part2b' => 'Then, on September 9, 2014, he opened Restaurant "NAKATANI" where he showcases his creativity.',
+         'part3' => 'Since 2016, NAKATANI has maintained one star in the French Michelin Guide.'
       ]
    ]
 ];

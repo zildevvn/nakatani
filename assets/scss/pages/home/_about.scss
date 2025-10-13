@@ -2,14 +2,16 @@
     padding: 75px 0 30px 0;
     width: 100%;
     height: auto;
-    position: relative;
     background-position: center right;
-    background-repeat: no-repeat;
-    background-size: cover;
     background-image: url('../../../images/home/bg-about-ss.jpg');
+    margin-top: 100vh;
 
+    @media (max-width: 1023.98px) {
+        padding-top: 60px;
+    }
+    
     @media (max-width: 767.98px) {
-        padding: 48px 0 40px 0;
+        padding: 48px 0 44px 0;
     }
 
     .nkt-about-warp{
@@ -24,7 +26,6 @@
         @media (max-width: 767.98px) {
             flex-wrap: wrap;
             flex-direction: column-reverse;
-            gap:24px;
         }
         
         > div{
@@ -40,9 +41,16 @@
             }
 
             img{
-                @media (max-width: 767.98px) {
+                @media (max-width: 1023.98px) {
                     width: 100%;
                     height: auto;
+                    min-height: 40vh;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    -o-object-position: center;
+                    object-position: center;
+                }
+                @media (max-width: 767.98px) {
                     min-height: 200px;
                 }
             }
@@ -59,6 +67,10 @@
                     font-family: $font-tertiary;
                     margin: 0;
                     color:$color-primary;
+
+                    @media (max-width: 1440.98px) {
+                        font-size: 60px;
+                    }
 
                     @media (max-width: 1199.98px) {
                         font-size: 54px;
@@ -78,16 +90,12 @@
                     @media (max-width: 1023.98px) {
                         margin-top: 16px;
                     }
-
-                    @media (max-width: 767.98px) {
-                        margin-top: 20px;
-                    }
                 }
 
                 p{
                    font-size: 16px;
                    font-family: $font-second;
-                   line-height: 125%;
+                   line-height: 205%;
                    margin-top: 40px;
                    color:#59493f;
                    margin-bottom: 0;
@@ -103,6 +111,7 @@
                     @media (max-width: 767.98px) {
                         font-size: 12px;
                         margin-top: 20px;
+                        line-height: 166%;
                     }
                 
                 }
@@ -112,5 +121,8 @@
 
     &_carousel{
         margin-top: 40px;
+        @media (max-width: 767.98px) {
+            margin-top: 20px;
+        }
     }
 }

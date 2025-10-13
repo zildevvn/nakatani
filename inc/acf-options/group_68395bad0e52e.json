@@ -3,27 +3,6 @@
     "title": "General Options",
     "fields": [
         {
-            "key": "field_68395bae90781",
-            "label": "Google Maps API Key",
-            "name": "google_map_api_key",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_68ea0fc040380",
             "label": "Information",
             "name": "information_ft",
@@ -145,5 +124,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1760190098
+    "modified": 1760337015
 }

@@ -1,4 +1,6 @@
-@import 'hero';
-@import 'about';
-@import 'menu';
-@import 'profile'
+.template-home{
+    @import 'hero';
+    @import 'about';
+    @import 'menu';
+    @import 'profile';
+}

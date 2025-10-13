@@ -4,14 +4,14 @@
     $dinner      = $menu['dinner'] ? : '';
     $seller_book = $menu['sellerBook'] ? : '';
 ?>
-<section id='menu' class="nkt-menu">
+<section id='menu' class="nkt-menu section-relative">
     <div class="container"> 
         <h2 class="text-center"> <?= $menu['label'] ?> </h2>
     </div>
 
     <?php if(!empty($lunch)): ?>
         <div class="nkt-menu__lunch w-100"> 
-            <div class="nkt-menu__lunch-bg"> 
+            <div class="nkt-menu__lunch-bg nkt-bg"> 
                 <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/bg-menu-section.jpg" alt="bg-menu-lunch"/>
             </div>
 
@@ -28,7 +28,7 @@
 
     <?php if(!empty($dinner)): ?>
         <div class="nkt-menu__dinner w-100"> 
-            <div class="nkt-menu__dinner-bg"> 
+            <div class="nkt-menu__dinner-bg nkt-bg"> 
                 <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/bg-menu-lunch.jpg" alt="bg-menu-lunch"/>
             </div>
 
@@ -45,7 +45,7 @@
 
     <?php if(!empty($seller_book)): ?>
         <div class="nkt-menu__sb w-100"> 
-            <div class="nkt-menu__sb-bg"> 
+            <div class="nkt-menu__sb-bg nkt-bg"> 
                 <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/bg-seller-book.jpg" alt="bg-menu-lunch"/>
             </div>
 

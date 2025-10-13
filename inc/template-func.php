@@ -66,3 +66,29 @@ function nakatani_post_item()
     </div>
 <?php }
 
+function nktReservation(){
+    $information  = get_field('information_ft', 'option') ? : '';
+    $tel          = (!empty($information) && $information['tel']) ?  $information['tel']: '';
+    $reservation  = nkt_translate('reservation', 'reservation');
+    // echo "<pre>";
+    // echo print_r($reservation);
+    // echo "</pre>";
+?>
+    <?php if(!empty($reservation) || !empty($tel)): ?>
+        <div class="nkt-reservation"> 
+            <div class="nkt-reservation-inner"> 
+                <?php if(!empty($reservation['label'])):?>
+                    <p class="nkt-reservation__title w-100"> <?= $reservation['label'] ?> </p>
+                <?php endif; ?>
+
+                <p class="nkt-reservation__phone w-100">
+                    tel:<a href="tel:<?= $tel ?>"> <?= $tel ?> </a>
+                </p>
+
+                <?php if(!empty($reservation['ctaText']) && !empty($reservation['ctaLink'])):?>
+                   <a class="btn" href="<?= $reservation['ctaLink'] ?>"> <?= $reservation['ctaText'] ?> </a>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+<?php }

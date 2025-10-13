@@ -6,7 +6,7 @@
 
 get_header();
 ?>
-    <main id="primary" class="site-main">
+    <main id="primary" class="site-main template-home">
         <?php get_template_part('template-parts/pages/home/hero') ?>
         <?php get_template_part('template-parts/pages/home/about') ?>
         <?php get_template_part('template-parts/pages/home/menu') ?>
