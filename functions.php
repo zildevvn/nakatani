@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('NAKATANI_WP_TOOLKIT_VER')) {
-	define('NAKATANI_WP_TOOLKIT_VER', '1.0');
+	define('NAKATANI_WP_TOOLKIT_VER', '1.0.1');
 }
 
 define('TEMPLATE_DIRECTORY_URL', get_template_directory_uri());

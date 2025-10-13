@@ -1,5 +1,7 @@
 
 main.wine-page{
+    overflow:inherit;
     @import 'hero';
-    @import 'categories';
+    @import 'cate';
+    @import 'wines';
 }
