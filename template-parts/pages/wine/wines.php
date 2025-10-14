@@ -91,7 +91,7 @@ $wine_categories = get_terms([
         return strcmp($a['type']->name, $b['type']->name);
     });
 ?>
-    <div class="cate-group__types"> 
+    <div class="cate-group__types d-flex flex-wrap align-content-start"> 
         <?php 
             // First, display wines grouped by type (posts WITH type)
             foreach ($wines_by_type as $type_group) : 
@@ -108,28 +108,50 @@ $wine_categories = get_terms([
 <?php } ?>
 
 <?php function get_all_wines_by_type($wines, $type){ ?>
-    <div class="type-group"> 
+    <div class="type-group w-100"> 
         <h3 class="type-group__title"><?php echo esc_html($type->name); ?></h3>
         <div class="type-group__wines"> 
             <?php foreach ($wines as $wine) : ?>
-                <div class="wine-item">
-                    <?php echo esc_html($wine['title']); ?>
-                    <br/>
-                </div>
+                <?php wine_item($wine) ?>
             <?php endforeach; ?>
         </div>
     </div>
 <?php } ?>
 
 <?php function get_all_wines_not_type($wines_without_type){ ?> 
-    <div class="type-group not-type">  
+    <div class="type-group not-type w-100">  
         <div class="type-group__wines">
             <?php foreach ($wines_without_type as $wine) : ?>
-                <div class="wine-item">
-                    <?php echo esc_html($wine['title']); ?>
-                    <br/>
-                </div>
+                <?php wine_item($wine) ?>
             <?php endforeach; ?>
         </div>
+    </div>
+<?php } ?>
+
+
+<?php function wine_item($wine){ 
+    $producer = get_field( "producer_wine", $wine['ID'] );
+    $vintage  = get_field( "vintage_wine", $wine['ID'] );
+    $price    = get_field( "price_wine", $wine['ID'] );    
+?>
+    <div class="wine-item d-flex justify-content-between align-items-center">
+        <h4 class="mb-0"> <?= esc_html($wine['title']); ?> </h4>
+
+        <p class="producer mb-0 text-end"> 
+            <?php if(!empty($producer)): ?>
+                <?= esc_html( $producer) ?>
+            <?php endif ?>    
+        </p>
+        
+        <p class="vintage mb-0 text-end"> 
+            <?php if(!empty($vintage)): ?>
+                <?= esc_html( $vintage) ?> 
+            <?php endif ?>
+        </p>
+    
+        <p class="price mb-0 text-end"> 
+            <?php if(!empty($price)): ?> <?= esc_html( $price) ?>€ <?php endif ?>
+        </p>
+        
     </div>
 <?php } ?>

@@ -1,6 +1,16 @@
 .nkt-list-categories{
-    // background-image: url('../../../images/home/bg-about-ss.jpg');
+    background-image: url('../../../images/home/bg-about-ss.jpg');
     min-height: 446px;
+    margin-top: 100vh;
+    padding:40px 0;
+    // position: sticky;
+    // top: 100px;
+    // z-index: 9999;
+
+    // @media (max-width: 767.98px) {
+    //     display: none;
+    // }
+
     &::before{
         content: " ";
         display: inline-block;
@@ -11,5 +21,225 @@
         left: 0;
         top: 0;
         z-index: -1;
+    }
+
+    &__intro{
+        h2{
+            font-size: 25.48px;
+            line-height: 37.38px;
+            color: #80624c;
+            margin: 0;
+
+            @media (max-width: 767.98px) {
+                font-size: 24px;
+                line-height: 36px;
+            }
+        }
+
+        p, a{
+            font-size: 14.86px;
+            line-height: 22.39px;
+            font-family: $font-second;
+            color:#59493f;
+        }
+
+        p{
+            margin: 12px 0 0 0;
+        }
+
+        a{
+            text-decoration: none;
+            margin-top: 8px;
+            display: inline-block;
+        }
+    }
+
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 50px;
+        width: 100%;
+        max-width: 1540px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        padding: 0 20px;
+
+        @media (max-width: 1399.98px) { 
+            gap:32px;
+        }
+
+        @media (max-width: 1199.98px) {
+            gap:24px;
+        }
+
+        @media (max-width: 1023.98px) { 
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 575.98px) {
+            gap:20px;
+        }
+
+        .cate-item{
+            cursor: pointer;
+            @media (max-width: 1023.98px) { 
+                width: calc(25% - 18px)
+            }
+
+            @media (max-width: 575.98px) {
+                width: calc((100% / 3) - (40px / 3));
+            }
+
+            &__arrow {
+                img{
+                    @media (max-width: 575.98px) {
+                        width: 100%;
+                        height: auto;
+                        max-width: 20px;
+                    }
+                }
+            }
+
+            &__thumbnail{
+                img{
+                    width: 100%;
+                    height: auto;
+                    max-width: 140px;
+
+                    @media (max-width: 1399.98px) { 
+                        max-width: 120px;
+                    }
+
+                    @media (max-width: 1199.98px) {
+                        max-width: 100px;
+                    }
+
+                    @media (max-width: 575.98px) {
+                        max-width: 80px;
+                    }
+                }
+            }
+
+            &__title{
+                font-size: 24px;
+                line-height: 26.34px;
+                color: #69513e;
+                font-weight: 500;
+                margin: 16px 0 10px 0;
+
+                @media (max-width: 1399.98px) { 
+                    font-size: 20px;
+                    line-height: 1.5;
+                }
+
+                @media (max-width: 1023.98px) {
+                    font-size: 17px;
+                }
+
+                @media (max-width: 575.98px) {
+                    font-size: 13.8px;
+                    line-height: 15.89px;
+                }
+            }
+
+
+            &:first-child, &:nth-child(2){
+                @media (max-width: 575.98px) {
+                    width: calc(50% - 10px);
+                }
+            }
+
+            &#item-cate-champagne{
+                .cate-item__thumbnail img {
+                    max-width: 79px;
+
+                    @media (max-width: 1399.98px) { 
+                        max-width: 59px;
+                    }
+
+                    @media (max-width: 1199.98px) {
+                        max-width: 49px;
+                    }
+
+                    @media (max-width: 575.98px) {
+                        max-width: 39px;
+                    }
+                }
+            }
+
+            &#item-cate-aperitifs-digestifs{
+                .cate-item__thumbnail img {
+                    max-width: 126px;
+
+                    @media (max-width: 1399.98px) { 
+                        max-width: 106px;
+                    }
+
+                    @media (max-width: 1199.98px) {
+                        max-width: 86px;
+                    }
+
+                    @media (max-width: 575.98px) {
+                        max-width: 66px;
+                    }
+                }
+            }
+
+            &#item-cate-bordeaux-blancs{
+                .cate-item__thumbnail img {
+                    max-width: 128px;
+
+                    @media (max-width: 1399.98px) { 
+                        max-width: 108px;
+                    }
+
+                    @media (max-width: 1199.98px) {
+                        max-width: 88px;
+                    }
+
+                    @media (max-width: 575.98px) {
+                        max-width: 68px;
+                    }
+                }
+            }
+
+            &#item-cate-bourgogne-blanc, &#item-cate-la-vallee-du-rhone-rouge{
+                .cate-item__thumbnail img {
+                    max-width: 123px;
+
+                    @media (max-width: 1399.98px) { 
+                        max-width: 103px;
+                    }
+
+                    @media (max-width: 1199.98px) {
+                        max-width: 82px;
+                    }
+
+                    @media (max-width: 575.98px) {
+                        max-width: 62px;
+                    }
+                }
+            }
+
+            &#item-cate-la-vallee-du-rhone-blanc, &#item-cate-bourgogne-rouge{
+                .cate-item__thumbnail img {
+                    max-width: 112px;
+
+                    @media (max-width: 1399.98px) { 
+                        max-width: 92px;
+                    }
+
+                    @media (max-width: 1199.98px) {
+                        max-width: 72px;
+                    }
+
+                    @media (max-width: 575.98px) {
+                        max-width: 52px;
+                    }
+                }
+            }
+        }
     }
 }

@@ -80,52 +80,78 @@
         });
     }
 
-const nktaboutCarousel = () => {
-    const swiper = new Swiper('.nkt-about_carousel', {
-        loop: true,
-        speed: 1000,
-        effect: 'side',
-        fadeEffect: {
-            crossFade: true
-        },
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        slidesPerView: 1,
-        spaceBetween: 20,
-        breakpoints: {
-            375: {
-                slidesPerView: 3,
-                spaceBetween: 20,
+    const nktaboutCarousel = () => {
+        const swiper = new Swiper('.nkt-about_carousel', {
+            loop: true,
+            speed: 1000,
+            effect: 'side',
+            fadeEffect: {
+                crossFade: true
             },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: {
+                375: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
 
-            768: {
-                slidesPerView: 4,
-                spaceBetween: 20,
-            },
-            1024: {
-                slidesPerView: 4,
-                spaceBetween: 24,
-            },
-            1200: {
-                slidesPerView: 5,
-                spaceBetween: 24,
-            },
-            1600: {
-                slidesPerView: 7,
-                spaceBetween: 24,
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 24,
+                },
+                1200: {
+                    slidesPerView: 5,
+                    spaceBetween: 24,
+                },
+                1600: {
+                    slidesPerView: 7,
+                    spaceBetween: 24,
+                }
             }
+        });
+    }
+
+    const nktScrollWineItem = () => {
+
+    $('.cate-item').on('click', function() {
+        var targetSection = $(this).data('cate');
+        var $targetElement = $('#' + targetSection);
+        console.log("aa")
+        console.log(targetSection)
+        console.log($targetElement)
+        
+        if ($targetElement.length) {
+            // Tính toán offset nếu có fixed header (ví dụ: 80px)
+            var offset = 80;
+            var targetPosition = $targetElement.offset().top - offset;
+            
+            $('html, body').animate({
+                scrollTop: targetPosition
+            }, 800, 'swing');
+            
+            // Update active state
+            $('.cate-item').removeClass('active');
+            $(this).addClass('active');
         }
     });
-}
 
+    }
     
     $(document).ready(function () {
        nktInfoFooter()
        nktLanguage()
        nktHeroSlider()
        nktaboutCarousel()
+       nktScrollWineItem()
     })
 
 })(jQuery); 
