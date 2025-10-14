@@ -7,7 +7,7 @@
     ]);
 
 ?>
-<section class="nkt-list-categories section-relative ntk-bg-image">
+<section class="nkt-list-categories section-relative nkt-bg-image">
     <div class="nkt-list-categories__intro text-center"> 
         <div class="container text-center"> 
             <?php if(!empty($intro['label'])): ?>

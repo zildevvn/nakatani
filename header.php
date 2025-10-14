@@ -11,6 +11,8 @@
         href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
 </head>
 
 <body id="body" <?php body_class(); ?>>

@@ -1,15 +1,21 @@
 .nkt-list-categories{
     background-image: url('../../../images/home/bg-about-ss.jpg');
-    min-height: 446px;
     margin-top: 100vh;
     padding:40px 0;
-    // position: sticky;
-    // top: 100px;
-    // z-index: 9999;
+    position: sticky;
+    top: -70px;
+    z-index: 9999;
 
-    // @media (max-width: 767.98px) {
-    //     display: none;
-    // }
+    @media (max-width: 1023.98px) {
+        top:-72px;
+    }
+
+    @media (max-width: 767.98px) {
+        // height: 640px;
+        padding-top: 24px;
+        padding-bottom: 35px;
+        top:-85px;
+    }
 
     &::before{
         content: " ";
@@ -78,6 +84,10 @@
             flex-wrap: wrap;
         }
 
+        @media (max-width: 767.98px) {
+            margin-top: 15px;
+        }
+
         @media (max-width: 575.98px) {
             gap:20px;
         }
@@ -97,12 +107,17 @@
                     @media (max-width: 575.98px) {
                         width: 100%;
                         height: auto;
-                        max-width: 20px;
+                        max-width: 16px;
                     }
                 }
             }
 
             &__thumbnail{
+                @media (max-width: 767.98px) {
+                    margin-bottom: 10px;
+                    display: none;
+                }
+
                 img{
                     width: 100%;
                     height: auto;
@@ -134,8 +149,17 @@
                     line-height: 1.5;
                 }
 
+                @media (max-width: 1199.98px) { 
+                    font-size: 18px;
+                }
+
                 @media (max-width: 1023.98px) {
                     font-size: 17px;
+                }
+
+                @media (max-width: 767.98px) {
+                    margin-top:0;
+                    margin-bottom: 5px;
                 }
 
                 @media (max-width: 575.98px) {
@@ -242,4 +266,50 @@
             }
         }
     }
+main.wine-page .nkt-list-categories {
+    /* Đảm bảo transform không bị ảnh hưởng bởi GSAP */
+    will-change: transform, height;
 }
+
+// main.wine-page .nkt-list-categories .cate-item__thumbnail {
+//     /* GSAP sẽ xử lý transition */
+// }
+
+//     &.has-sticky {
+//         @media (max-width: 767.98px) {
+//         .cate-item__thumbnail {
+//         height: 0 !important;
+//         opacity: 0 !important;
+//         margin: 0 !important;
+//         padding: 0 !important;
+//     }
+    
+// .cate-item__thumbnail img {
+//         opacity: 0 !important;
+//         visibility: hidden !important;
+//     }
+//         }
+//     }
+}
+
+
+/* Transition cho thumbnail */
+// main.wine-page .nkt-list-categories__list .cate-item .cate-item__thumbnail, main.wine-page .nkt-list-categories .cate-item__thumbnail {
+//     transition: all 0.3s ease-in-out !important;
+//     overflow: hidden;
+// }
+
+/* Khi sticky trên mobile - ẩn hoàn toàn thumbnail */
+// @media (max-width: 767.98px) {
+//     main.wine-page .nkt-list-categories.has-sticky .cate-item__thumbnail {
+//         height: 0 !important;
+//         opacity: 0 !important;
+//         margin: 0 !important;
+//         padding: 0 !important;
+//     }
+    
+//     main.wine-page .nkt-list-categories.has-sticky .cate-item__thumbnail img {
+//         opacity: 0 !important;
+//         visibility: hidden !important;
+//     }
+// }

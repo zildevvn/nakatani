@@ -10,7 +10,7 @@
         position: relative;
 
         @media (max-width: 767.98px) {
-            padding: 50px 0 56px 0 ;
+            padding: 30px 0 25px 0 ;
         }
 
         .container{
@@ -28,6 +28,11 @@
 
             @media (max-width: 1023.98px) {
                 flex-wrap: wrap;
+                gap:32px;
+            }
+
+            @media (max-width: 767.98px) {
+                gap:20px;
             }
         }
 
@@ -65,10 +70,6 @@
 
             @media (max-width: 1023.98px) {
                 font-size: 48px;
-            }
-
-            @media (max-width: 767.98px) {
-                font-size: 38px;
             }
 
             @media (max-width: 767.98px) {
@@ -115,11 +116,12 @@
 
             @media (max-width: 767.98px) {
                 gap:24px;
+                font-size: 14px;
             }
             
             @media (max-width: 575.98px) {
                 gap:16px;
-                font-size: 14px;
+                font-size: 11px;
             }
 
             
@@ -152,8 +154,8 @@
                     margin: 0;
                     font-family: $font-second;
                     @media (max-width: 575.98px) {
-                        min-width: 110px;
-                        max-width: 120px;
+                        min-width: 110px !important;
+                        max-width: 120px !important;
                     }
                 }
 
@@ -210,7 +212,7 @@
         }
 
         @media (max-width: 575.98px) {
-            padding: 32px 0;
+            padding: 26px 0 32px 0;
         }
 
         &-inner > div, .main-footer__socials{
@@ -224,8 +226,11 @@
                 gap: 2rem;
             }
 
-            @media (max-width: 575.98px) {
-                gap:2rem;
+            @media (max-width: 767.98px) {
+                flex-direction: column-reverse;
+                justify-content: start;
+                align-items: start !important;
+                gap: 16px;
             }
         }
     }
@@ -253,20 +258,28 @@
         margin: 0;
 
         @media (max-width: 767.98px) {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         @media (max-width: 575.98px) {
-            font-size: 14px;
+            font-size: 11px;
         }
     }
 
     &_sub-text{
         margin-top: 32px;
+
+        @media (max-width: 767.98px) {
+            margin-top: 22px;
+        }
     }
 
     &__copyright{
         margin-top: 16px;
+
+        @media (max-width: 767.98px) {
+            margin-top: 12px;
+        }
     }
 
     &__menu{
@@ -302,8 +315,12 @@
                         font-size: 16px;
                     }
 
-                    @media (max-width: 575.98px) {
+                    @media (max-width: 767.98px) {
                         font-size: 14px;
+                    }
+
+                    @media (max-width: 575.98px) {
+                        font-size: 12px;
                     }
                 }
             }

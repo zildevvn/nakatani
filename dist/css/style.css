@@ -6394,8 +6394,7 @@ img {
   top: 0;
   clear: right;
   width: 100%;
-  background: transparent;
-  z-index: 999;
+  z-index: 99999;
   max-width: 100%;
 }
 .header-main .container-fluid, .header-main .container-sm, .header-main .container-md, .header-main .container-lg, .header-main .container-xl {
@@ -6701,7 +6700,7 @@ body.logged-in .header-main .header-mobile-inner {
 }
 @media (max-width: 767.98px) {
   .main-footer-top {
-    padding: 50px 0 56px 0;
+    padding: 30px 0 25px 0;
   }
 }
 .main-footer-top .container {
@@ -6720,6 +6719,12 @@ body.logged-in .header-main .header-mobile-inner {
 @media (max-width: 1023.98px) {
   .main-footer-top-inner {
     flex-wrap: wrap;
+    gap: 32px;
+  }
+}
+@media (max-width: 767.98px) {
+  .main-footer-top-inner {
+    gap: 20px;
   }
 }
 .main-footer-top__bg {
@@ -6758,11 +6763,6 @@ body.logged-in .header-main .header-mobile-inner {
 @media (max-width: 1023.98px) {
   .main-footer-top h2, .main-footer-top .h2 {
     font-size: 48px;
-  }
-}
-@media (max-width: 767.98px) {
-  .main-footer-top h2, .main-footer-top .h2 {
-    font-size: 38px;
   }
 }
 @media (max-width: 767.98px) {
@@ -6812,12 +6812,13 @@ body.logged-in .header-main .header-mobile-inner {
 @media (max-width: 767.98px) {
   .main-footer__information .info-item {
     gap: 24px;
+    font-size: 14px;
   }
 }
 @media (max-width: 575.98px) {
   .main-footer__information .info-item {
     gap: 16px;
-    font-size: 14px;
+    font-size: 11px;
   }
 }
 .main-footer__information .info-item:not(:last-child) {
@@ -6847,8 +6848,8 @@ body.logged-in .header-main .header-mobile-inner {
 }
 @media (max-width: 575.98px) {
   .main-footer__information .info-item__title p {
-    min-width: 110px;
-    max-width: 120px;
+    min-width: 110px !important;
+    max-width: 120px !important;
   }
 }
 .main-footer__information .info-item__title span {
@@ -6896,7 +6897,7 @@ body.logged-in .header-main .header-mobile-inner {
 }
 @media (max-width: 575.98px) {
   .main-footer-bottom {
-    padding: 32px 0;
+    padding: 26px 0 32px 0;
   }
 }
 .main-footer-bottom-inner > div, .main-footer-bottom .main-footer__socials {
@@ -6910,9 +6911,12 @@ body.logged-in .header-main .header-mobile-inner {
     gap: 2rem;
   }
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .main-footer-bottom-inner {
-    gap: 2rem;
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: start !important;
+    gap: 16px;
   }
 }
 .main-footer__logo img {
@@ -6938,19 +6942,29 @@ body.logged-in .header-main .header-mobile-inner {
 }
 @media (max-width: 767.98px) {
   .main-footer_sub-text, .main-footer__copyright {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media (max-width: 575.98px) {
   .main-footer_sub-text, .main-footer__copyright {
-    font-size: 14px;
+    font-size: 11px;
   }
 }
 .main-footer_sub-text {
   margin-top: 32px;
 }
+@media (max-width: 767.98px) {
+  .main-footer_sub-text {
+    margin-top: 22px;
+  }
+}
 .main-footer__copyright {
   margin-top: 16px;
+}
+@media (max-width: 767.98px) {
+  .main-footer__copyright {
+    margin-top: 12px;
+  }
 }
 .main-footer__menu ul {
   gap: 50px;
@@ -6991,9 +7005,14 @@ body.logged-in .header-main .header-mobile-inner {
     font-size: 16px;
   }
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .main-footer__menu ul li a {
     font-size: 14px;
+  }
+}
+@media (max-width: 575.98px) {
+  .main-footer__menu ul li a {
+    font-size: 12px;
   }
 }
 
@@ -7614,9 +7633,23 @@ main.wine-page .nkt-hero {
 }
 main.wine-page .nkt-list-categories {
   background-image: url(../images/bg-about-ss.jpg);
-  min-height: 446px;
   margin-top: 100vh;
   padding: 40px 0;
+  position: sticky;
+  top: -70px;
+  z-index: 9999;
+}
+@media (max-width: 1023.98px) {
+  main.wine-page .nkt-list-categories {
+    top: -72px;
+  }
+}
+@media (max-width: 767.98px) {
+  main.wine-page .nkt-list-categories {
+    padding-top: 24px;
+    padding-bottom: 35px;
+    top: -85px;
+  }
 }
 main.wine-page .nkt-list-categories::before {
   content: " ";
@@ -7682,6 +7715,11 @@ main.wine-page .nkt-list-categories__list {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 767.98px) {
+  main.wine-page .nkt-list-categories__list {
+    margin-top: 15px;
+  }
+}
 @media (max-width: 575.98px) {
   main.wine-page .nkt-list-categories__list {
     gap: 20px;
@@ -7704,7 +7742,13 @@ main.wine-page .nkt-list-categories__list .cate-item {
   main.wine-page .nkt-list-categories__list .cate-item__arrow img {
     width: 100%;
     height: auto;
-    max-width: 20px;
+    max-width: 16px;
+  }
+}
+@media (max-width: 767.98px) {
+  main.wine-page .nkt-list-categories__list .cate-item__thumbnail {
+    margin-bottom: 10px;
+    display: none;
   }
 }
 main.wine-page .nkt-list-categories__list .cate-item__thumbnail img {
@@ -7740,9 +7784,20 @@ main.wine-page .nkt-list-categories__list .cate-item__title {
     line-height: 1.5;
   }
 }
+@media (max-width: 1199.98px) {
+  main.wine-page .nkt-list-categories__list .cate-item__title {
+    font-size: 18px;
+  }
+}
 @media (max-width: 1023.98px) {
   main.wine-page .nkt-list-categories__list .cate-item__title {
     font-size: 17px;
+  }
+}
+@media (max-width: 767.98px) {
+  main.wine-page .nkt-list-categories__list .cate-item__title {
+    margin-top: 0;
+    margin-bottom: 5px;
   }
 }
 @media (max-width: 575.98px) {
@@ -7845,6 +7900,14 @@ main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhon
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhone-blanc .cate-item__thumbnail img, main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-rouge .cate-item__thumbnail img {
     max-width: 52px;
   }
+}
+main.wine-page .nkt-list-categories main.wine-page .nkt-list-categories {
+  /* Đảm bảo transform không bị ảnh hưởng bởi GSAP */
+  will-change: transform, height;
+}
+main.wine-page {
+  /* Transition cho thumbnail */
+  /* Khi sticky trên mobile - ẩn hoàn toàn thumbnail */
 }
 main.wine-page .nkt-wines .cate-group {
   padding-bottom: 40px;
