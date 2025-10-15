@@ -156,16 +156,16 @@
 
                         p{
                             &.producer{
-                                width: 35%;
+                                width: 37%;
                             }
 
                             &.price{
-                                min-width: 43px;
-                                width: 43px;
+                                min-width: 50px;
+                                width: 50px;
 
                                 @media (max-width: 389.98px) {
-                                    min-width: 40px;
-                                    width: 40px;
+                                    min-width: 42px;
+                                    width: 42px;
                                 }
                             }
 

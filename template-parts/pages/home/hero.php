@@ -25,4 +25,6 @@
             </div>
         </div>
     </div>
+
+    <?php nkt_arrow_effect() ?>
 </section>

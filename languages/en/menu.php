@@ -1,8 +1,8 @@
 <?php
 return [
     'home'    => ['Home', '/'],
-    'menu'    => ['Menu', '#menu'],
+    'menu'    => ['Menu', '/?section=menu'],
     'wine'    => ['Wine', '/wine'],
     'access'  => ['Access', '/access'],
-    'contact' => ['Contact', '#contact'],
+    'contact' => ['Contact', '/?section=contact'],
 ];

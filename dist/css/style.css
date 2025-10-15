@@ -6387,6 +6387,33 @@ img {
   text-decoration: none;
 }
 
+@keyframes ca3_fade_move_down {
+  0% {
+    -webkit-transform: translate(0, -20px);
+    transform: translate(0, -20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(0, 20px);
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+}
+.nkt-arrow-effect {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  -webkit-animation: ca3_fade_move_down 2s ease-in-out infinite;
+  animation: ca3_fade_move_down 2s ease-in-out infinite;
+  z-index: 99;
+}
+
 .header-main {
   padding: 10px 0;
   position: fixed;
@@ -7638,6 +7665,8 @@ main.wine-page .nkt-list-categories {
   position: sticky;
   top: -70px;
   z-index: 9999;
+  will-change: height;
+  transition: height 0.4s ease;
 }
 @media (max-width: 1023.98px) {
   main.wine-page .nkt-list-categories {
@@ -7745,11 +7774,19 @@ main.wine-page .nkt-list-categories__list .cate-item {
     max-width: 16px;
   }
 }
+main.wine-page .nkt-list-categories__list .cate-item__thumbnail {
+  transition: opacity 0.4s ease, margin-bottom 0.4s ease;
+  overflow: hidden;
+}
 @media (max-width: 767.98px) {
   main.wine-page .nkt-list-categories__list .cate-item__thumbnail {
     margin-bottom: 10px;
-    display: none;
   }
+}
+main.wine-page .nkt-list-categories__list .cate-item__thumbnail.hidden {
+  display: block !important; /* Vẫn giữ layout */
+  visibility: visible !important;
+  pointer-events: none;
 }
 main.wine-page .nkt-list-categories__list .cate-item__thumbnail img {
   width: 100%;
@@ -8071,16 +8108,16 @@ main.wine-page .nkt-wines .cate-group__types .type-group__wines .wine-item h4, m
   width: 100%;
 }
 main.wine-page .nkt-wines .cate-group__types .type-group__wines .wine-item p.producer {
-  width: 35%;
+  width: 37%;
 }
 main.wine-page .nkt-wines .cate-group__types .type-group__wines .wine-item p.price {
-  min-width: 43px;
-  width: 43px;
+  min-width: 50px;
+  width: 50px;
 }
 @media (max-width: 389.98px) {
   main.wine-page .nkt-wines .cate-group__types .type-group__wines .wine-item p.price {
-    min-width: 40px;
-    width: 40px;
+    min-width: 42px;
+    width: 42px;
   }
 }
 main.wine-page .nkt-wines .cate-group__types .type-group__wines .wine-item p.vintage {

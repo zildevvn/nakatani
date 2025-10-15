@@ -6,7 +6,7 @@
 ?>
 <section id='menu' class="nkt-menu section-relative">
     <div class="container"> 
-        <h2 class="text-center"> <?= $menu['label'] ?> </h2>
+        <h2 id="menu" class="text-center"> <?= $menu['label'] ?> </h2>
     </div>
 
     <?php if(!empty($lunch)): ?>

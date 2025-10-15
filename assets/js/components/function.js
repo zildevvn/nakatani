@@ -83,13 +83,13 @@
     const nktaboutCarousel = () => {
         const swiper = new Swiper('.nkt-about_carousel', {
             loop: true,
-            speed: 1000,
+            speed: 8000,
             effect: 'side',
             fadeEffect: {
                 crossFade: true
             },
             autoplay: {
-                delay: 5000,
+                delay: 0,
                 disableOnInteraction: false,
             },
             slidesPerView: 1,

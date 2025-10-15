@@ -30,7 +30,7 @@ return [
         'label'       => 'セラーブック',
         'origin_note' => 'レストランNAKATANI セラーブック',
         'btnText'     => '詳細を見る',
-        'btnLink'     => '#!',
+        'btnLink'     => '/wine/',
     ]
   ],
   'profile' => [

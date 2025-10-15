@@ -18,7 +18,7 @@
             <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/bg-top-footer.jpg" alt="bg-footer-top"/>
         </div>
         <div class="container"> 
-            <h2><?= $heading ?></h2>
+            <h2 id="contact"><?= $heading ?></h2>
 
             <div class="main-footer-top-inner d-flex"> 
                 <?php if(!empty($information)): ?>

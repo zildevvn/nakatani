@@ -1,8 +1,8 @@
 <?php
 return [
-    'home'    => ['ホーム', '/'],
-    'menu'    => ['メニュー', '#menu'],
-    'wine'    => ['ワイン', '/wine'],
-    'access'  => ['アクセス', '/access'],
-    'contact' => ['お問い合わせ', '#contact'],
+    'home'    => ['Home', '/'],
+    'menu'    => ['Menu', '/?section=menu'],
+    'wine'    => ['Wine', '/wine'],
+    'access'  => ['Access', '/access'],
+    'contact' => ['Contact', '/?section=contact'],
 ];
