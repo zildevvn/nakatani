@@ -12,7 +12,8 @@
     <?php if(!empty($lunch)): ?>
         <div class="nkt-menu__lunch w-100"> 
             <div class="nkt-menu__lunch-bg nkt-bg"> 
-                <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/bg-menu-section.jpg" alt="bg-menu-lunch"/>
+                <img class="d-none d-md-block" src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/bg-menu-section.jpg" alt="bg-menu-lunch"/>
+                <img class="d-md-none d-block" src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/image-mb-001.jpg" alt="bg-menu-lunch"/>
             </div>
 
             <div class="nkt-menu__lunch-warp warp"> 
@@ -29,7 +30,8 @@
     <?php if(!empty($dinner)): ?>
         <div class="nkt-menu__dinner w-100"> 
             <div class="nkt-menu__dinner-bg nkt-bg"> 
-                <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/bg-menu-lunch.jpg" alt="bg-menu-lunch"/>
+                <img class="d-none d-md-block" src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/bg-menu-lunch.jpg" alt="bg-menu-lunch"/>
+                <img class="d-md-none d-block" src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/image-mb-002.jpg" alt="bg-menu-lunch"/>
             </div>
 
             <div class="nkt-menu__dinner-warp warp"> 
@@ -46,7 +48,8 @@
     <?php if(!empty($seller_book)): ?>
         <div class="nkt-menu__sb w-100"> 
             <div class="nkt-menu__sb-bg nkt-bg"> 
-                <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/bg-seller-book.jpg" alt="bg-menu-lunch"/>
+                <img class="d-none d-md-block" src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/bg-seller-book.jpg" alt="bg-menu-lunch"/>
+                <img class="d-md-none d-block" src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/home/image-mb-003.jpg" alt="bg-menu-lunch"/>
             </div>
 
             <div class="nkt-menu__sb-warp warp"> 

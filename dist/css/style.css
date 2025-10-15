@@ -6339,13 +6339,13 @@ img {
 
 .nkt-reservation {
   position: absolute;
-  top: 100px;
+  top: 115px;
   right: 10px;
   z-index: 99;
 }
 @media (max-width: 1023.98px) {
   .nkt-reservation {
-    top: 130px;
+    top: 135px;
   }
 }
 @media (max-width: 767.98px) {
@@ -6400,12 +6400,19 @@ img {
   top: 0;
   z-index: 99999;
   background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.nkt-modal-book.active {
+  opacity: 1;
+  visibility: visible;
 }
 .nkt-modal-book .nkt-modal-book-content {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8);
   width: 90%;
   max-width: 800px;
   height: 90%;
@@ -6416,6 +6423,12 @@ img {
   padding: 32px;
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease 0.1s;
+}
+.nkt-modal-book .nkt-modal-book-content.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 .nkt-modal-book .nkt-modal-book-content .btn-close-modal-book {
   position: absolute;
@@ -6431,6 +6444,11 @@ img {
   justify-content: center;
   border: none;
   border-radius: 50%;
+  transition: all 0.2s ease;
+}
+.nkt-modal-book .nkt-modal-book-content .btn-close-modal-book:hover {
+  transform: scale(1.1);
+  background: rgb(96, 73.5, 57);
 }
 .nkt-modal-book .nkt-modal-book-content iframe {
   width: 100%;
@@ -6441,6 +6459,10 @@ img {
 
 .btn-open-modal-book {
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-open-modal-book:hover {
+  transform: translateY(-2px);
 }
 
 @keyframes ca3_fade_move_down {
@@ -7432,8 +7454,11 @@ body.logged-in .header-main .header-mobile-inner {
 }
 @media (max-width: 767.98px) {
   .template-home .nkt-menu__lunch {
-    padding-top: 174px;
+    padding-top: 164px;
     padding-bottom: 20px;
+  }
+  .template-home .nkt-menu__lunch .nkt-menu__lunch-bg img {
+    object-position: left center;
   }
 }
 .template-home .nkt-menu__lunch-warp .content {

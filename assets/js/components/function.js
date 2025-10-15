@@ -146,6 +146,7 @@
         });
     };
 
+
     const nktModalBook = () => {
         $('.btn-open-modal-book').on('click', function() {
             const modalHTML = `
@@ -156,15 +157,37 @@
                     </div>
                 </div>
             `;
-            
+        
             $('body').append(modalHTML);
-            
+        
+            // Animation open
+            setTimeout(() => {
+                $('.nkt-modal-book').addClass('active');
+                $('.nkt-modal-book-content').addClass('active');
+            }, 10);
+        
+          
             $('.btn-close-modal-book, .nkt-modal-book').on('click', function(e) {
                 if (e.target === this) {
-                    $('.nkt-modal-book').remove();
+                    closeModal();
+                }
+            });
+        
+            $(document).on('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
                 }
             });
         });
+    
+        function closeModal() {
+            $('.nkt-modal-book').removeClass('active');
+            $('.nkt-modal-book-content').removeClass('active');
+        
+            setTimeout(() => {
+                $('.nkt-modal-book').remove();
+            }, 300);
+        }
     }
     
     $(document).ready(function () {
