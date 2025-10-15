@@ -46,7 +46,7 @@
         },
         {
             "key": "field_68ec9d0059b69",
-            "label": "Price",
+            "label": "Price(€)",
             "name": "price_wine",
             "aria-label": "",
             "type": "text",
@@ -85,5 +85,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1760338814
+    "modified": 1760546653
 }
