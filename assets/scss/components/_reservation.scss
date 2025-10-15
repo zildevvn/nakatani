@@ -4,6 +4,10 @@
     right: 10px;
     z-index: 99;
 
+    @media (max-width: 1023.98px) {
+        top:130px;
+    }
+
     @media (max-width: 767.98px) {
         display: none;
     }

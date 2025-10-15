@@ -10,6 +10,5 @@
 do_action('nakatani_hook_footer');
 wp_footer();
 ?>
-<div class="overlay-menu"></div>
 </body>
 </html>

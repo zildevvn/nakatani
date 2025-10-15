@@ -6343,6 +6343,11 @@ img {
   right: 10px;
   z-index: 99;
 }
+@media (max-width: 1023.98px) {
+  .nkt-reservation {
+    top: 130px;
+  }
+}
 @media (max-width: 767.98px) {
   .nkt-reservation {
     display: none;
@@ -6385,6 +6390,57 @@ img {
   letter-spacing: 0.06em;
   line-height: 115%;
   text-decoration: none;
+}
+
+.nkt-modal-book {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.6);
+}
+.nkt-modal-book .nkt-modal-book-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  height: 90%;
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: 1px 1px 20px 7px rgba(2, 2, 2, 0.16);
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+}
+.nkt-modal-book .nkt-modal-book-content .btn-close-modal-book {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background: #80624c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+}
+.nkt-modal-book .nkt-modal-book-content iframe {
+  width: 100%;
+  height: auto;
+  min-height: 80%;
+  overflow: auto;
+}
+
+.btn-open-modal-book {
+  cursor: pointer;
 }
 
 @keyframes ca3_fade_move_down {

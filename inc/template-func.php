@@ -95,7 +95,7 @@ function nktReservation(){
                 </p>
 
                 <?php if(!empty($reservation['ctaText']) && !empty($reservation['ctaLink'])):?>
-                   <a class="btn" href="<?= $reservation['ctaLink'] ?>"> <?= $reservation['ctaText'] ?> </a>
+                    <div class="btn btn-open-modal-book"> <?= $reservation['ctaText'] ?> </div>
                 <?php endif; ?>
             </div>
         </div>

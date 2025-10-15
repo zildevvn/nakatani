@@ -145,6 +145,27 @@
             $this.addClass('active');
         });
     };
+
+    const nktModalBook = () => {
+        $('.btn-open-modal-book').on('click', function() {
+            const modalHTML = `
+                <div class="nkt-modal-book">
+                    <div class="nkt-modal-book-content">
+                        <button class="btn-close-modal-book">&times;</button>
+                        <iframe src="https://widget.thefork.com/en/68c527f1-efb7-4c60-8005-86ffcff0a82e" frameborder="0"></iframe>
+                    </div>
+                </div>
+            `;
+            
+            $('body').append(modalHTML);
+            
+            $('.btn-close-modal-book, .nkt-modal-book').on('click', function(e) {
+                if (e.target === this) {
+                    $('.nkt-modal-book').remove();
+                }
+            });
+        });
+    }
     
     $(document).ready(function () {
        nktInfoFooter()
@@ -152,5 +173,6 @@
        nktHeroSlider()
        nktaboutCarousel()
        nktScrollWineItem()
+       nktModalBook()
     })
 })(jQuery); 
