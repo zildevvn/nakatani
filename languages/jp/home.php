@@ -1,7 +1,7 @@
 <?php
 return [
   'hero' => [
-    'subHeading' => 'フレンチレストラン',
+    'subHeading' => 'Restaurant cuisine française',
   ],
   'about' => [
     'heading'    => 'About',
@@ -13,28 +13,28 @@ return [
     ]
   ],
   'menu' =>[
-    'label' => 'メニュー',
+    'label' => 'Menu',
     'lunch' => [
-      'label'       => 'ランチ',
+      'label'       => 'Lunch',
       'course'      => '前菜・魚・肉・デザート',
       'origin_note' => '＊全てフランス産のお肉・鶏肉を使用しています。',
       'price'       => 'ランチ 85€'
     ],
     'dinner' => [
-      'label'       => 'ディナー',
+      'label'       => 'Diner',
       'course'      => '時節の食材を使った６皿からなる',
       'origin_note' => 'デギュスタシオンコース',
       'price'       => 'ディナー 155 / 195€'
     ],
     'sellerBook' => [
-        'label'       => 'セラーブック',
+        'label'       => 'Seller Book',
         'origin_note' => 'レストランNAKATANI セラーブック',
-        'btnText'     => '詳細を見る',
+        'btnText'     => 'View more',
         'btnLink'     => '/wine/',
     ]
   ],
   'profile' => [
-    'lable' => 'プロフィール',
+    'lable' => 'Profile',
     'name' => 'シェフ：中谷 慎祐',
     'bio' => [
       'part1' => '2001年にフランスに到着して以来、地方のいくつかのレストランで経験を積んできました。',

@@ -77,6 +77,7 @@
         margin-right: auto;
         margin-top: 30px;
         padding: 0 20px;
+        will-change: transform, height;
 
         @media (max-width: 1399.98px) { 
             gap:32px;
@@ -124,13 +125,7 @@
 
                 @media (max-width: 767.98px) {
                     margin-bottom: 10px;
-                    display: none;
-                }
-
-                &.hidden{
-                    display: block !important; /* Vẫn giữ layout */
-                    visibility: visible !important;
-                    pointer-events: none;
+                    // display: none;
                 }
 
                 img{
@@ -281,50 +276,4 @@
             }
         }
     }
-main.wine-page .nkt-list-categories {
-    /* Đảm bảo transform không bị ảnh hưởng bởi GSAP */
-    will-change: transform, height;
 }
-
-// main.wine-page .nkt-list-categories .cate-item__thumbnail {
-//     /* GSAP sẽ xử lý transition */
-// }
-
-//     &.has-sticky {
-//         @media (max-width: 767.98px) {
-//         .cate-item__thumbnail {
-//         height: 0 !important;
-//         opacity: 0 !important;
-//         margin: 0 !important;
-//         padding: 0 !important;
-//     }
-    
-// .cate-item__thumbnail img {
-//         opacity: 0 !important;
-//         visibility: hidden !important;
-//     }
-//         }
-//     }
-}
-
-
-/* Transition cho thumbnail */
-// main.wine-page .nkt-list-categories__list .cate-item .cate-item__thumbnail, main.wine-page .nkt-list-categories .cate-item__thumbnail {
-//     transition: all 0.3s ease-in-out !important;
-//     overflow: hidden;
-// }
-
-/* Khi sticky trên mobile - ẩn hoàn toàn thumbnail */
-// @media (max-width: 767.98px) {
-//     main.wine-page .nkt-list-categories.has-sticky .cate-item__thumbnail {
-//         height: 0 !important;
-//         opacity: 0 !important;
-//         margin: 0 !important;
-//         padding: 0 !important;
-//     }
-    
-//     main.wine-page .nkt-list-categories.has-sticky .cate-item__thumbnail img {
-//         opacity: 0 !important;
-//         visibility: hidden !important;
-//     }
-// }

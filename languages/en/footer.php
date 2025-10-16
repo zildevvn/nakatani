@@ -7,6 +7,10 @@ return [
         'label'   => 'Closed',
         'content' => 'Closed Sunday and Monday'
     ],
+    'address' => [
+        'label'   => 'Address',
+        'content' => '27 rue Pierre Leroux 75007 PARIS FRANCE'
+    ],
     'lunch' => [
         'label'   => 'lunch',
         'content' => 'from 12:30 to 2:00 p.m. (last order)'

@@ -10,6 +10,7 @@
     $lunch       = nkt_translate('lunch', 'footer');
     $dinner      = nkt_translate('dinner', 'footer');
     $heading     = nkt_translate('heading', 'footer');
+    $address     = nkt_translate('address', 'footer');
 ?>
 
 <footer class="main-footer">
@@ -23,7 +24,7 @@
             <div class="main-footer-top-inner d-flex"> 
                 <?php if(!empty($information)): ?>
                     <?php 
-                        $address = $information['address'] ? : '';
+                        
                         $tel     = $information['tel'] ? : '';
                         $fax     = $information['fax'] ? : '';
                         $email   = $information['email'] ? : '';
@@ -34,11 +35,11 @@
                             <div class="<?=  $classed ?> address"> 
                                 <div class="info-item__title">
                                     <span></span>
-                                    <p>Address</p>
+                                    <p><?= $address['label'] ?></p>
                                 </div>
 
                                 <p class="info-item__content"> 
-                                    <?= $address ?>
+                                   <?= $address['content'] ?>
                                 </p>
                             </div>
                         <?php endif; ?>  

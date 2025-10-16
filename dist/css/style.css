@@ -7822,6 +7822,7 @@ main.wine-page .nkt-list-categories__list {
   margin-right: auto;
   margin-top: 30px;
   padding: 0 20px;
+  will-change: transform, height;
 }
 @media (max-width: 1399.98px) {
   main.wine-page .nkt-list-categories__list {
@@ -7875,13 +7876,7 @@ main.wine-page .nkt-list-categories__list .cate-item__thumbnail {
 @media (max-width: 767.98px) {
   main.wine-page .nkt-list-categories__list .cate-item__thumbnail {
     margin-bottom: 10px;
-    display: none;
   }
-}
-main.wine-page .nkt-list-categories__list .cate-item__thumbnail.hidden {
-  display: block !important; /* Vẫn giữ layout */
-  visibility: visible !important;
-  pointer-events: none;
 }
 main.wine-page .nkt-list-categories__list .cate-item__thumbnail img {
   width: 100%;
@@ -8032,14 +8027,6 @@ main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhon
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhone-blanc .cate-item__thumbnail img, main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-rouge .cate-item__thumbnail img {
     max-width: 52px;
   }
-}
-main.wine-page .nkt-list-categories main.wine-page .nkt-list-categories {
-  /* Đảm bảo transform không bị ảnh hưởng bởi GSAP */
-  will-change: transform, height;
-}
-main.wine-page {
-  /* Transition cho thumbnail */
-  /* Khi sticky trên mobile - ẩn hoàn toàn thumbnail */
 }
 main.wine-page .nkt-wines .cate-group {
   padding-bottom: 40px;

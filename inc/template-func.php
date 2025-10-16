@@ -2,9 +2,7 @@
 
 function nkt_arrow_effect(){ ?>
     <div class="nkt-arrow-effect"> 
-        <svg width="33" height="74" viewBox="0 0 33 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.6202 48.8804V0H11.469V48.8804H0L16.0468 73.7708L32.0936 48.8804H20.6202Z" fill="white"></path>
-        </svg>
+        <img src="<?= TEMPLATE_DIRECTORY_URL ?>/assets/images/image-arrow.png" alt="icon arrow"/>
     </div>
 <?php }
 

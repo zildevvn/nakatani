@@ -7,6 +7,10 @@ return [
         'label'   => 'Fermé',
         'content' => 'dimanche et lundi'
     ],
+    'address' => [
+        'label'   => 'Address',
+        'content' => '27 rue Pierre Leroux 75007 PARIS FRANCE'
+    ],
     'lunch' => [
         'label'   => 'Déjeuner',
         'content' => 'de 12:30 à 14:00 (dernière commande)'
