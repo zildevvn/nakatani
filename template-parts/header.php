@@ -33,7 +33,7 @@
 
             <div class="header-main-right d-none d-md-flex justify-content-end align-items-center"> 
                 <div class="header-main__nav">
-                    <?php  get_template_part('template-parts/menu-content') ?>
+                    <?php get_template_part('template-parts/menu-content') ?>
                 </div>   
 
                 <div class="header-main__language"> 
@@ -74,18 +74,7 @@
 
             <div class="header-mobile-content"> 
                 <div class="header-main__nav">
-                    <?php
-                        if (has_nav_menu('primary-menu')) {
-                            wp_nav_menu([
-                                'theme_location' => 'primary-menu',
-                                'menu_id'        => 'primary-menu',
-                                'menu_class'     => 'primary-menu d-flex align-items-center p-0 m-0 flex-wrap',
-                                'bootstrap'      => true,
-                                'container_class' => 'menu-container',
-                                'items_wrap'      => '<ul id="%1$s" class="%2$s navbar-nav">%3$s</ul>'
-                            ]);
-                        }
-                    ?>
+                    <?php get_template_part('template-parts/menu-content') ?>
                 </div>
 
                 <div class="header-main__language"> 

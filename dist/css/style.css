@@ -6552,6 +6552,7 @@ body.logged-in .header-main {
 @media (max-width: 767.98px) {
   .header-main__nav ul {
     gap: 0px;
+    flex-wrap: wrap;
   }
 }
 .header-main__nav ul li {
@@ -6580,6 +6581,7 @@ body.logged-in .header-main {
 @media (max-width: 767.98px) {
   .header-main__nav ul li a {
     color: white;
+    width: 100%;
   }
 }
 @media (min-width: 768px) {
