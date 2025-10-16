@@ -11,6 +11,7 @@
     $dinner      = nkt_translate('dinner', 'footer');
     $heading     = nkt_translate('heading', 'footer');
     $address     = nkt_translate('address', 'footer');
+    $map         = nkt_translate('map', 'footer');
 ?>
 
 <footer class="main-footer">
@@ -137,7 +138,13 @@
                 <?php endif;?>
                 
                 <div class="main-footer__map"> 
-                    <iframe loading="lazy" src="https://maps.google.com/maps?q=27%20rue%20Pierre%20Leroux%2075007%20PARIS%20FRANCE&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" title="27 rue Pierre Leroux 75007 PARIS FRANCE" aria-label="27 rue Pierre Leroux 75007 PARIS FRANCE"></iframe>
+                    <iframe 
+                        data-lang="<?= $map ?>" 
+                        loading="lazy" 
+                        src="https://maps.google.com/maps?q=27%20rue%20Pierre%20Leroux%2075007%20PARIS%20FRANCE&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near&amp;hl=<?= $map ?>" 
+                        title="27 rue Pierre Leroux 75007 PARIS FRANCE" 
+                        aria-label="27 rue Pierre Leroux 75007 PARIS FRANCE">
+                    </iframe>
                 </div>
             </div>
         </div>

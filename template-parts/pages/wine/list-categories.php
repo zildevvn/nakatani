@@ -3,7 +3,7 @@
     $intro = nkt_translate('categories', 'wine-page');
     $wine_categories = get_terms([
         'taxonomy'   => 'category-wine',
-        'hide_empty' => true,
+        'hide_empty' => false,
     ]);
 
 ?>

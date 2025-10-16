@@ -3,6 +3,7 @@ return [
     'heading'     => 'Informatin',
     'sub-text'    => '法律に基づく表記',
     'work_hours'  => '営業時間',
+    'map'         => 'ja',
     'closed_days' => [
         'label'   => '定休日：',
         'content' => '日曜・月曜'

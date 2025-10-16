@@ -7770,8 +7770,8 @@ main.wine-page .nkt-list-categories {
 @media (max-width: 767.98px) {
   main.wine-page .nkt-list-categories {
     padding-top: 24px;
-    padding-bottom: 35px;
-    top: -85px;
+    padding-bottom: 30px;
+    top: -120px;
   }
 }
 main.wine-page .nkt-list-categories::before {
@@ -8027,6 +8027,20 @@ main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhon
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhone-blanc .cate-item__thumbnail img, main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-rouge .cate-item__thumbnail img {
     max-width: 52px;
   }
+}
+main.wine-page .nkt-list-categories__list {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+main.wine-page .nkt-list-categories__list .cate-item {
+  transform-style: preserve-3d;
+}
+main.wine-page .nkt-list-categories__list .cate-item__thumbnail {
+  transform-origin: center bottom;
+  will-change: transform, opacity, margin-bottom;
+}
+main.wine-page .nkt-list-categories__list .cate-item__title, main.wine-page .nkt-list-categories__list .cate-item__arrow {
+  will-change: transform;
 }
 main.wine-page .nkt-wines .cate-group {
   padding-bottom: 40px;

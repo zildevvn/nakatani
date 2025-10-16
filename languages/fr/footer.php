@@ -3,6 +3,7 @@ return [
     'heading'     => 'Informations',
     'sub-text'    => 'Mentions légales',
     'work_hours'  => 'Horaires d’ouverture:',
+    'map'         => 'en',
     'closed_days' => [
         'label'   => 'Fermé',
         'content' => 'dimanche et lundi'

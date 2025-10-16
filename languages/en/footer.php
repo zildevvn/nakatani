@@ -3,6 +3,7 @@ return [
     'heading'     => 'Information',
     'sub-text'    => 'Legal notice ',
     'work_hours'  => 'Opening hours:',
+    'map'         => 'en',
     'closed_days' => [
         'label'   => 'Closed',
         'content' => 'Closed Sunday and Monday'
