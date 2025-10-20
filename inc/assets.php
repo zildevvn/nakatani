@@ -1,6 +1,7 @@
 <?php
 
 add_action('wp_enqueue_scripts', function () {
+	wp_enqueue_style('nkt-google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Pinyon+Script&display=swap', false ); 
 	wp_enqueue_style('theme-styles', get_template_directory_uri() . '/dist/css/style.css', array(), uniqid());
 	wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/dist/js/main.bundle.js', array('jquery'), uniqid(), true);
 
@@ -16,14 +17,3 @@ add_action('wp_enqueue_scripts', function () {
 	]);
 });
 
-if (!function_exists('nakatani_load_fonts')) {
-	/**
-	 * Load custom font family
-	 */
-	function nakatani_load_fonts()
-	{
-		wp_enqueue_style('primary-font', get_template_directory_uri() . '/assets/fonts/stylesheet.css', [], NAKATANI_WP_TOOLKIT_VER);
-	}
-}
-
-add_action('admin_enqueue_scripts', 'nakatani_load_fonts');

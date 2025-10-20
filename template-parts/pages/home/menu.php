@@ -55,7 +55,7 @@
             <div class="nkt-menu__sb-warp warp"> 
                 <div class="content"> 
                     <h3> <?= $seller_book['label'] ?>  </h3>
-                    <p class="origin_note"> <?= $dinner['origin_note'] ?> </p>
+                    <p class="origin_note"> <?= $seller_book['origin_note'] ?> </p>
                     <a href="<?= $seller_book['btnLink'] ?>"> 
                         <?= $seller_book['btnText'] ?>
                     </a>
