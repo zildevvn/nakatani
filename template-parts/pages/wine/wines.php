@@ -19,7 +19,7 @@ $wine_categories = get_terms([
     $bg_style = $image ? 'background-image: url(' . esc_url($image) . ')' : 'background-color: #5d442c';
     $classed  = $image ? 'nkt-bg-image' : '';
 ?>
-    <div class="cate-group"> 
+    <div id="cate-group-<?= esc_attr($category->slug) ?>" class="cate-group"> 
         <div class="cate-group-top <?php echo esc_attr($classed); ?>" style="<?php echo esc_attr($bg_style); ?>"> 
             <h2 id="section-<?php echo esc_attr($category->slug); ?>" class="text-center">
                 <?php echo esc_html($category->name); ?>
