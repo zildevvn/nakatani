@@ -25,7 +25,7 @@
     </div>
 
     <?php if(!empty($wine_categories) && !is_wp_error($wine_categories)): ?>
-        <div class="nkt-list-categories__list"> 
+        <div class="nkt-list-categories__list container"> 
             <?php foreach ($wine_categories as $category) : ?>
                 <?php  $thumbnail = get_field('thumbnail_cate_wine', 'category-wine_' . $category->term_id);
                 
