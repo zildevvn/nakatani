@@ -121,7 +121,6 @@
     }
 
     
-
     const nktScrollWineItem = () => { 
         $('.cate-item').on('click', function(e) {
             e.preventDefault();
@@ -189,6 +188,23 @@
             }, 300);
         }
     }
+
+    function debounce(func, wait) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                func.apply(context, args);
+            }, wait);
+        };
+    }
+
+    $(window).on('scroll', debounce(function() {
+        var isSticky = $(window).scrollTop() > $('.nkt-list-categories').offset().top - 73;
+        
+        $('.nkt-list-categories, body').toggleClass('has-sticky', isSticky);
+    }, 10));
     
     $(document).ready(function () {
        nktInfoFooter()

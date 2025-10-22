@@ -6501,6 +6501,7 @@ img {
   width: 100%;
   z-index: 99999;
   max-width: 100%;
+  transition: all 0.3s ease;
 }
 .header-main .container-fluid, .header-main .container-sm, .header-main .container-md, .header-main .container-lg, .header-main .container-xl {
   display: flex;
@@ -6525,6 +6526,11 @@ body.logged-in .header-main {
     width: 100%;
     height: auto;
     max-width: 150px;
+  }
+}
+@media (max-width: 991.98px) and (max-width: 767.98px) {
+  .header-main__logo img, .header-main__logo svg {
+    max-width: 136px;
   }
 }
 .header-main-right {
@@ -6629,6 +6635,22 @@ body.logged-in .header-main {
     padding-left: 0;
     padding-right: 0;
   }
+}
+.header-main__cta {
+  gap: 20px;
+}
+.header-main .cta-booking {
+  background: #fcf1e9;
+  border-radius: 10px;
+  border: 1px solid #59493f;
+  color: #59493f;
+  font-size: 12px;
+  line-height: 150%;
+  font-family: "Noto Serif JP", serif;
+  padding: 0px 15px;
+  justify-content: center;
+  height: 30px;
+  align-items: center;
 }
 .header-main .header-mobile {
   position: fixed;
@@ -7741,15 +7763,67 @@ body.logged-in .header-main .header-mobile-inner {
   }
 }
 
+@media (max-width: 767.98px) {
+  body.has-sticky .header-main {
+    background: #fff;
+  }
+}
+
 main.wine-page {
   overflow: inherit;
 }
-main.wine-page .nkt-hero {
+main.wine-page .nkt-hero__slider {
+  z-index: 9;
+}
+main.wine-page .nkt-hero__slider .swiper-wrapper .swiper-slide {
+  width: 100%;
   height: 100vh;
+  position: relative;
 }
 @supports (height: 100svh) {
-  main.wine-page .nkt-hero {
-    height: 100svh;
+  main.wine-page .nkt-hero__slider .swiper-wrapper .swiper-slide {
+    min-height: 100svh;
+  }
+}
+main.wine-page .nkt-hero__slider .swiper-wrapper .swiper-slide > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+main.wine-page .nkt-hero__content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+main.wine-page .nkt-hero__content h1, main.wine-page .nkt-hero__content .h1 {
+  font-size: 60px;
+  line-height: 150%;
+  font-weight: 600;
+  margin: 0 0 0px 0;
+  color: #fff;
+  font-family: "Pinyon Script", cursive;
+}
+@media (max-width: 1199.98px) {
+  main.wine-page .nkt-hero__content h1, main.wine-page .nkt-hero__content .h1 {
+    font-size: 54px;
+  }
+}
+@media (max-width: 1023.98px) {
+  main.wine-page .nkt-hero__content h1, main.wine-page .nkt-hero__content .h1 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 767.98px) {
+  main.wine-page .nkt-hero__content h1, main.wine-page .nkt-hero__content .h1 {
+    font-size: 40px;
   }
 }
 main.wine-page .nkt-list-categories {
@@ -7757,21 +7831,21 @@ main.wine-page .nkt-list-categories {
   margin-top: 100vh;
   padding: 40px 0;
   position: sticky;
-  top: -103px;
+  top: -73px;
   z-index: 9999;
   will-change: height;
   transition: height 0.4s ease;
 }
 @media (max-width: 1023.98px) {
   main.wine-page .nkt-list-categories {
-    top: -90px;
+    top: -60px;
   }
 }
 @media (max-width: 767.98px) {
   main.wine-page .nkt-list-categories {
     padding-top: 24px;
     padding-bottom: 30px;
-    top: -120px;
+    top: -30px;
   }
 }
 main.wine-page .nkt-list-categories::before {
@@ -7784,6 +7858,11 @@ main.wine-page .nkt-list-categories::before {
   left: 0;
   top: 0;
   z-index: -1;
+}
+main.wine-page .nkt-list-categories__intro {
+  opacity: 1;
+  z-index: 1;
+  transition: all 0.3s ease;
 }
 main.wine-page .nkt-list-categories__intro h2, main.wine-page .nkt-list-categories__intro .h2 {
   font-size: 25.48px;
@@ -7889,7 +7968,7 @@ main.wine-page .nkt-list-categories__list .cate-item__thumbnail {
 main.wine-page .nkt-list-categories__list .cate-item__thumbnail img {
   width: 100%;
   height: auto;
-  max-width: 100px;
+  max-width: 80px;
 }
 main.wine-page .nkt-list-categories__list .cate-item__title {
   font-size: 16px;
@@ -7916,41 +7995,41 @@ main.wine-page .nkt-list-categories__list .cate-item__title {
   }
 }
 main.wine-page .nkt-list-categories__list .cate-item#item-cate-champagne .cate-item__thumbnail img {
-  max-width: 58px;
+  max-width: 46.4px;
 }
 @media (max-width: 575.98px) {
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-champagne .cate-item__thumbnail img {
-    max-width: 39px;
+    max-width: 31.2px;
   }
 }
 main.wine-page .nkt-list-categories__list .cate-item#item-cate-aperitifs-digestifs .cate-item__thumbnail img {
-  max-width: 100px;
+  max-width: 80px;
 }
 @media (max-width: 1199.98px) {
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-aperitifs-digestifs .cate-item__thumbnail img {
-    max-width: 86px;
+    max-width: 68.8px;
   }
 }
 @media (max-width: 575.98px) {
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-aperitifs-digestifs .cate-item__thumbnail img {
-    max-width: 66px;
+    max-width: 52.8px;
   }
 }
 main.wine-page .nkt-list-categories__list .cate-item#item-cate-bordeaux-blancs .cate-item__thumbnail img {
-  max-width: 108px;
+  max-width: 86.4px;
 }
 @media (max-width: 1199.98px) {
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-bordeaux-blancs .cate-item__thumbnail img {
-    max-width: 88px;
+    max-width: 70.4px;
   }
 }
 @media (max-width: 575.98px) {
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-bordeaux-blancs .cate-item__thumbnail img {
-    max-width: 68px;
+    max-width: 54.4px;
   }
 }
 main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-blanc .cate-item__thumbnail img, main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhone-rouge .cate-item__thumbnail img {
-  max-width: 103px;
+  max-width: 82.4px;
 }
 @media (max-width: 1199.98px) {
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-blanc .cate-item__thumbnail img, main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhone-rouge .cate-item__thumbnail img {
@@ -7959,20 +8038,20 @@ main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-blanc .
 }
 @media (max-width: 575.98px) {
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-blanc .cate-item__thumbnail img, main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhone-rouge .cate-item__thumbnail img {
-    max-width: 80px;
+    max-width: 65.6px;
   }
 }
 main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhone-blanc .cate-item__thumbnail img, main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-rouge .cate-item__thumbnail img {
-  max-width: 100px;
+  max-width: 80px;
 }
 @media (max-width: 1199.98px) {
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhone-blanc .cate-item__thumbnail img, main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-rouge .cate-item__thumbnail img {
-    max-width: 72px;
+    max-width: 57.6px;
   }
 }
 @media (max-width: 575.98px) {
   main.wine-page .nkt-list-categories__list .cate-item#item-cate-la-vallee-du-rhone-blanc .cate-item__thumbnail img, main.wine-page .nkt-list-categories__list .cate-item#item-cate-bourgogne-rouge .cate-item__thumbnail img {
-    max-width: 70px;
+    max-width: 56px;
   }
 }
 main.wine-page .nkt-list-categories__list {
@@ -7988,6 +8067,10 @@ main.wine-page .nkt-list-categories__list .cate-item__thumbnail {
 }
 main.wine-page .nkt-list-categories__list .cate-item__title, main.wine-page .nkt-list-categories__list .cate-item__arrow {
   will-change: transform;
+}
+main.wine-page .nkt-list-categories.has-sticky .nkt-list-categories__intro {
+  opacity: 0;
+  z-index: -1;
 }
 main.wine-page .nkt-wines .cate-group {
   padding-bottom: 40px;

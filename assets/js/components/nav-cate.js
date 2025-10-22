@@ -127,7 +127,7 @@
                 ease: "power2.inOut"
             }, "-=0.2");
     }
-    
+
     $(document).ready(function() {
         if (typeof gsap !== 'undefined') {
             initCategoryScroll();

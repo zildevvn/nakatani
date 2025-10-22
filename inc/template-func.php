@@ -92,7 +92,7 @@ function nktReservation(){
                     tel:<a href="tel:<?= $tel ?>"> <?= $tel ?> </a>
                 </p>
 
-                <?php if(!empty($reservation['ctaText']) && !empty($reservation['ctaLink'])):?>
+                <?php if(!empty($reservation['ctaText'])):?>
                     <div class="btn btn-open-modal-book"> <?= $reservation['ctaText'] ?> </div>
                 <?php endif; ?>
             </div>

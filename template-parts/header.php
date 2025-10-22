@@ -1,6 +1,7 @@
 <?php 
     $custom_logo_id = get_theme_mod('custom_logo');
-    $logo_url = wp_get_attachment_url($custom_logo_id);
+    $logo_url       = wp_get_attachment_url($custom_logo_id);
+    $button         = nkt_translate('button', 'header');
 ?>
 <header id="site-header" class="header-main">
     <div class="container-fluid">
@@ -25,11 +26,20 @@
                     </h1>
                 <?php } ?>
             </div>
+            
+            <div class="header-main__cta d-md-none d-flex justify-content-end align-items-center"> 
+                <?php if(!empty($button)): ?>
+                    <div class="cta-booking d-md-none d-flex flex-wrap btn-open-modal-book">
+                        <?= $button ?>
+                    </div>
+                <?php endif; ?>
 
-            <div class="btn-open-menu d-md-none d-flex flex-wrap"> 
-                <span class="line">  </span>
-                <span class="line">  </span>
+                <div class="btn-open-menu d-md-none d-flex flex-wrap"> 
+                    <span class="line">  </span>
+                    <span class="line">  </span>
+                </div>
             </div>
+
 
             <div class="header-main-right d-none d-md-flex justify-content-end align-items-center"> 
                 <div class="header-main__nav">

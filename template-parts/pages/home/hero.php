@@ -12,6 +12,7 @@
         </div>
     </div>
 
+    
     <?php nktReservation() ?>
 
     <div class="nkt-hero__content w-100"> 

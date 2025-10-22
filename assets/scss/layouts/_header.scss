@@ -8,6 +8,7 @@
     // background: #fff;
     z-index: 99999;
     max-width: 100%;
+    transition: all 0.3s ease;
 
     .container-fluid{
         display: flex;
@@ -33,6 +34,10 @@
                 width: 100%;
                 height: auto;
                 max-width: 150px;
+
+                @media (max-width: 767.98px) {
+                    max-width: 136px;
+                }
             }
         }
     }
@@ -143,6 +148,24 @@
             padding-left: 0;
             padding-right: 0;
         }
+    }
+
+    &__cta {
+        gap: 20px;
+    }
+
+    .cta-booking{
+        background: #fcf1e9;
+        border-radius: 10px;
+        border:1px solid #59493f;
+        color:#59493f;
+        font-size: 12px;
+        line-height: 150%;
+        font-family: $font-primary;
+        padding: 0px 15px;
+        justify-content: center;
+        height: 30px;
+        align-items: center;
     }
 
     .header-mobile {
