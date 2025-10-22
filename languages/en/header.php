@@ -1,4 +1,4 @@
 <?php
 return [
-    'button'  => 'オンライン予約'
+    'button'  => 'Book a table'
 ];

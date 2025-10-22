@@ -6647,9 +6647,9 @@ body.logged-in .header-main {
   font-size: 12px;
   line-height: 150%;
   font-family: "Noto Serif JP", serif;
-  padding: 0px 15px;
+  padding: 0px 20px;
   justify-content: center;
-  height: 30px;
+  height: 41px;
   align-items: center;
 }
 .header-main .header-mobile {
@@ -7458,6 +7458,7 @@ body.logged-in .header-main .header-mobile-inner {
   padding-left: 50px;
   background: rgba(255, 255, 255, 0.78);
   color: #59493f;
+  padding-right: 50px;
 }
 @media (min-width: 1270px) {
   .template-home .nkt-menu__lunch-warp .content, .template-home .nkt-menu__sb-warp .content {

@@ -13,9 +13,9 @@ return [
     ]
   ],
   'menu' => [
-    'label' => 'メニュー',
+    'label' => 'Menu',
     'lunch' => [
-      'label'       => 'Menu',
+      'label'       => 'Déjeuner',
       'course'      => 'Entrée · Poisson · Viande · Dessert',
       'origin_note' => '*Toutes les viandes et volailles utilisées sont d\'origine française.',
       'price'       => 'Déjeuner 85€'
@@ -30,7 +30,7 @@ return [
         'label'       => 'Carte des Vins',
         'origin_note' => 'Carte des Vins Restaurant NAKATANI',
         'btnText'     => 'Voir plus',
-        'btnLink'     => '/wine/',
+        'btnLink'     => '/wine',
     ]
   ],
   'profile' => [

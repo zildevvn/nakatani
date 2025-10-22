@@ -1,4 +1,4 @@
 <?php
 return [
-    'button'  => 'réservation en ligne'
+    'button'  => 'Réserver'
 ];
